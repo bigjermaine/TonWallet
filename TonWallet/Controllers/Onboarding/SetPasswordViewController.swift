@@ -84,6 +84,11 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
             setPasswordLabel.text = "Confirm a Passcode"
             enterPasswordLabel.text = "Re-enter the 4 digits in the passcode."
         }else  if isValid &&   setPasswordLabel.text != "Set a Passcode"  {
+            let vc = UINavigationController(rootViewController:  MainTableViewController())
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle =  .coverVertical
+            present(vc, animated: true)
+          
             
         }
         
