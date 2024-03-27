@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+
+
+struct Toncolors {
+    static let grayColor = UIColor(named:"tonGrayColor")
+    static let seedPhaseCellColor = UIColor(named:"seedPhaseCellColor")
+    static let   lightWhiteColor = UIColor(named:"lightWhiteColor")
+   
+  
+}

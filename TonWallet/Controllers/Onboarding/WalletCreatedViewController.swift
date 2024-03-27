@@ -83,8 +83,15 @@ class WalletCreatedViewController: UIViewController {
     
     func configureAction() {
         setupButton.addTarget(self, action: #selector(navigateToSetPasswordViewController), for: .touchUpInside)
+        skipForNowWalletButton.addTarget(self, action: #selector(didChangeValidity), for: .touchUpInside)
     }
-    
+    @objc func didChangeValidity() {
+            let vc =  MainTableViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle =  .coverVertical
+            present(vc, animated: true)
+          
+    }
   @objc func navigateToSetPasswordViewController() {
         let vc = SetPasswordViewController()
         let navVC = vc

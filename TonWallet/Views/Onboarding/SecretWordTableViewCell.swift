@@ -15,30 +15,39 @@ class secretWordTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = Toncolors.grayColor
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 13,weight: .regular)
+        label.font = .systemFont(ofSize: 17,weight: .light)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "1"
         return label
     }()
    
-     private let secretelabel: UILabel = {
-         let label = UILabel()
-         label.textColor = .black
-         label.numberOfLines = 0
-         label.font = .systemFont(ofSize: 13,weight: .bold)
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.text = "word"
-         return label
+        let secreteTextInput:  UITextField = {
+         let textField = UITextField()
+         textField.backgroundColor = Toncolors.seedPhaseCellColor
+         textField.font =  .systemFont(ofSize: 17,weight: .bold)
+         textField.translatesAutoresizingMaskIntoConstraints = false
+         textField.layer.masksToBounds = true
+         textField.textAlignment = .left
+         return textField
      }()
      
      
      override func awakeFromNib() {
          super.awakeFromNib()
-         // Initialization code
+        
      }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        secreteTextInput.text = ""
+    }
 
      required init?(coder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
+         super.init(coder: coder)
+         configureBackground()
+         addSubview()
+         configureLayout()
+         
+       
      }
      
      override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,20 +64,20 @@ class secretWordTableViewCell: UITableViewCell {
     }
     func addSubview() {
         contentView.addSubview( countlabel)
-        contentView.addSubview( secretelabel)
+        contentView.addSubview(secreteTextInput)
         contentView.layer.cornerRadius = 10
     }
      func configureLayout() {
          NSLayoutConstraint.activate([
             
             countlabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            countlabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 14),
+            countlabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
             countlabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            secretelabel.leadingAnchor.constraint(equalTo: countlabel.trailingAnchor, constant: 14),
+    
             
-            secretelabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            secretelabel.leadingAnchor.constraint(equalTo: countlabel.leadingAnchor, constant: 10),
-        
+            secreteTextInput.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            secreteTextInput.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 52),
+            secreteTextInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             
          ])
          
@@ -76,11 +85,7 @@ class secretWordTableViewCell: UITableViewCell {
          
      }
     
-     
-//    
-//    func configure( _ viewModel:BalancereleasesCellViewModel) {
-//        
-//        
-//        
-//    }
+    func configure( _ viewModel:Int) {
+        countlabel.text = "\(viewModel)"
+    }
 }

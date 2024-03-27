@@ -9,8 +9,9 @@ import UIKit
 
 import Foundation
 import UIKit
+import SwiftUI
 
-protocol OTPDelegate: class {
+protocol OTPDelegate: AnyObject {
     //always triggers when the OTP field is valid
     func didChangeValidity(isValid: Bool)
 }
@@ -23,10 +24,8 @@ class OTPStackView: UIStackView {
     var textFieldsCollection: [OTPTextField] = []
     weak var delegate: OTPDelegate?
     var showsWarningColor = false
-    
-    //Colors
     let inactiveFieldBorderColor = UIColor(white: 1, alpha: 0.3)
-    let textBackgroundColor =  Jamitcolor.textField
+    let textBackgroundColor = UIColor.white
     let activeFieldBorderColor = UIColor.white
     var remainingStrStack: [String] = []
     
@@ -73,16 +72,17 @@ class OTPStackView: UIStackView {
         self.addArrangedSubview(textField)
         textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         textField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: 52).isActive = true
+        textField.widthAnchor.constraint(equalToConstant: 16).isActive = true
         textField.backgroundColor = textBackgroundColor
         textField.textAlignment = .center
         textField.adjustsFontSizeToFitWidth = false
-        textField.font =  .poppinsBold(size: 40)
-        textField.textColor = .white
-        textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 2
-        textField.layer.borderColor = inactiveFieldBorderColor.cgColor
-        textField.keyboardType = .default
+        textField.font =  .systemFont(ofSize: 25)
+        textField.textColor = .black
+        textField.isSecureTextEntry = true
+        textField.layer.cornerRadius = 8
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor =  Toncolors.grayColor?.cgColor
+        textField.keyboardType = .phonePad
         textField.autocorrectionType = .yes
         textField.textContentType = .oneTimeCode
     }
@@ -115,6 +115,17 @@ class OTPStackView: UIStackView {
         showsWarningColor = isWarningColor
     }
     
+    func clearCoins() {
+        for textField in textFieldsCollection{
+            DispatchQueue.main.async {
+                textField.text = ""
+                textField.layer.borderColor =  Toncolors.grayColor?.cgColor
+                textField.backgroundColor = .white
+            }
+        }
+        
+    }
+    
     //autofill textfield starting from first
     private final func autoFillTextField(with string: String) {
         remainingStrStack = string.reversed().compactMap{String($0)}
@@ -139,12 +150,31 @@ extension OTPStackView: UITextFieldDelegate {
             setAllFieldColor(color: inactiveFieldBorderColor)
             showsWarningColor = false
         }
-        textField.layer.borderColor = activeFieldBorderColor.cgColor
+        if textField.text == "" {
+            textField.backgroundColor  = .white
+        }else {
+            textField.backgroundColor  = .black
+        }
     }
     
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField.text == "" {
+            textField.backgroundColor  = .white
+            // textField.layer.borderColor =  Color.white.cg
+        }else {
+            textField.backgroundColor  = .black
+        }
+        
+    }
     func textFieldDidEndEditing(_ textField: UITextField) {
         checkForValidity()
-        textField.layer.borderColor = inactiveFieldBorderColor.cgColor
+        if textField.text == "" {
+            textField.backgroundColor  = .white
+            // textField.layer.borderColor =  Color.white.cg
+        }else {
+            textField.backgroundColor  = .black
+        }
+        
     }
     
     //switches between OTPTextfields

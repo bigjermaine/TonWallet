@@ -117,4 +117,4 @@ struct RecivedNfT: View {
 #Preview {
     RecivedNfT()
 }
-e
+

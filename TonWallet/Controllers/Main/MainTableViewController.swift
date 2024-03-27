@@ -41,24 +41,24 @@ class MainTableViewController: UITabBarController {
         nav1.navigationBar.backgroundColor = .clear
         nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
         nav1.navigationBar.shadowImage = UIImage()
-
-        nav2.navigationBar.backgroundColor = .clear
-        nav2.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        nav2.navigationBar.shadowImage = UIImage()
-
-     
-        nav3.navigationBar.backgroundColor = .clear
-        nav3.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        nav3.navigationBar.shadowImage = UIImage()
-
-     
-        nav4.navigationBar.backgroundColor = .clear
-        nav4.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        nav4.navigationBar.shadowImage = UIImage()
-
-        UITabBar.appearance().barTintColor = .gray
-        UITabBar.appearance().tintColor  = .white
-        UITabBar.appearance().selectedImageTintColor = .systemBlue
+//
+//        nav2.navigationBar.backgroundColor = .clear
+//        nav2.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        nav2.navigationBar.shadowImage = UIImage()
+//
+//     
+//        nav3.navigationBar.backgroundColor = .clear
+//        nav3.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        nav3.navigationBar.shadowImage = UIImage()
+//
+//     
+//        nav4.navigationBar.backgroundColor = .clear
+//        nav4.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        nav4.navigationBar.shadowImage = UIImage()
+//
+//        UITabBar.appearance().barTintColor = .gray
+//        UITabBar.appearance().tintColor  = .white
+//        UITabBar.appearance().selectedImageTintColor = .systemBlue
         
         setViewControllers([nav1,nav2,nav3,nav4], animated: false)
         

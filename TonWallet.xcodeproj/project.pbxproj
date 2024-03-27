@@ -9,21 +9,81 @@
 /* Begin PBXBuildFile section */
 		D0168EF22BACD08100F330F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168EF12BACD08100F330F8 /* AppDelegate.swift */; };
 		D0168EF42BACD08100F330F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168EF32BACD08100F330F8 /* SceneDelegate.swift */; };
-		D0168EF62BACD08100F330F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168EF52BACD08100F330F8 /* ViewController.swift */; };
-		D0168EF92BACD08100F330F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0168EF72BACD08100F330F8 /* Main.storyboard */; };
+		D0168EF62BACD08100F330F8 /* LandPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168EF52BACD08100F330F8 /* LandPageViewController.swift */; };
 		D0168EFB2BACD08300F330F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0168EFA2BACD08300F330F8 /* Assets.xcassets */; };
 		D0168EFE2BACD08300F330F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0168EFC2BACD08300F330F8 /* LaunchScreen.storyboard */; };
+		D0168F312BAE071400F330F8 /* SeedPhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F302BAE071400F330F8 /* SeedPhaseViewController.swift */; };
+		D0168F352BAE0BAE00F330F8 /* SecretWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F342BAE0BAE00F330F8 /* SecretWordTableViewCell.swift */; };
+		D0168F372BAE0D2D00F330F8 /* TonWalletColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F362BAE0D2D00F330F8 /* TonWalletColor.swift */; };
+		D0168F3A2BAE944600F330F8 /* SeedPhaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F392BAE944600F330F8 /* SeedPhaseHeaderView.swift */; };
+		D0168F3F2BAEB0C600F330F8 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F3E2BAEB0C600F330F8 /* CustomAlert.swift */; };
+		D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F402BAEBDCB00F330F8 /* WalletCreatedViewController.swift */; };
+		D0168F452BAEC24300F330F8 /* OtpBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F432BAEC24300F330F8 /* OtpBoxCell.swift */; };
+		D0168F462BAEC24300F330F8 /* OtpStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F442BAEC24300F330F8 /* OtpStackViewController.swift */; };
+		D0168F482BAEC43600F330F8 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F472BAEC43600F330F8 /* SetPasswordViewController.swift */; };
+		D0168F4C2BAEF34600F330F8 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F4B2BAEF34600F330F8 /* MainTableViewController.swift */; };
+		D0168F4E2BAEF56D00F330F8 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F4D2BAEF56D00F330F8 /* WalletViewController.swift */; };
+		D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */; };
+		D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */; };
+		D0168F542BAEF5D500F330F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */; };
+		D0168F5A2BB013A100F330F8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F592BB013A100F330F8 /* HomeViewModel.swift */; };
+		D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F5C2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift */; };
+		D0168F5F2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F5E2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift */; };
+		D0168F612BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F602BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift */; };
+		D0168F632BB2C63400F330F8 /* BalanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F622BB2C63400F330F8 /* BalanceCollectionViewCell.swift */; };
+		D0168F652BB345E200F330F8 /* MainCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F642BB345E200F330F8 /* MainCollectionViewHeader.swift */; };
+		D0168F672BB36CCE00F330F8 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F662BB36CCE00F330F8 /* SecondCollectionViewCell.swift */; };
+		D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F682BB377CC00F330F8 /* SwappedCollectionViewCell.swift */; };
+		D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F6A2BB3833900F330F8 /* SentNftCollectionViewCell.swift */; };
+		D0168F6D2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F6C2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift */; };
+		D0168F6F2BB3F90A00F330F8 /* CustomFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F6E2BB3F90A00F330F8 /* CustomFooterView.swift */; };
+		D0168F712BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F702BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift */; };
+		D0168F752BB403CA00F330F8 /* RecentCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F742BB403CA00F330F8 /* RecentCoin.swift */; };
+		D0168F782BB40BB700F330F8 /* SentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F772BB40BB700F330F8 /* SentView.swift */; };
+		D0168F7A2BB40C4000F330F8 /* SwappedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F792BB40C4000F330F8 /* SwappedView.swift */; };
+		D0168F7C2BB40CDB00F330F8 /* RecivedNfT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */; };
+		D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0168EEE2BACD08100F330F8 /* TonWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0168EF12BACD08100F330F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0168EF32BACD08100F330F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0168EF52BACD08100F330F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D0168EF82BACD08100F330F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0168EF52BACD08100F330F8 /* LandPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandPageViewController.swift; sourceTree = "<group>"; };
 		D0168EFA2BACD08300F330F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0168EFD2BACD08300F330F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0168EFF2BACD08300F330F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0168F302BAE071400F330F8 /* SeedPhaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPhaseViewController.swift; sourceTree = "<group>"; };
+		D0168F342BAE0BAE00F330F8 /* SecretWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordTableViewCell.swift; sourceTree = "<group>"; };
+		D0168F362BAE0D2D00F330F8 /* TonWalletColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonWalletColor.swift; sourceTree = "<group>"; };
+		D0168F392BAE944600F330F8 /* SeedPhaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPhaseHeaderView.swift; sourceTree = "<group>"; };
+		D0168F3E2BAEB0C600F330F8 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		D0168F402BAEBDCB00F330F8 /* WalletCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreatedViewController.swift; sourceTree = "<group>"; };
+		D0168F432BAEC24300F330F8 /* OtpBoxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpBoxCell.swift; sourceTree = "<group>"; };
+		D0168F442BAEC24300F330F8 /* OtpStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpStackViewController.swift; sourceTree = "<group>"; };
+		D0168F472BAEC43600F330F8 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		D0168F4B2BAEF34600F330F8 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		D0168F4D2BAEF56D00F330F8 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D0168F592BB013A100F330F8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D0168F5C2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F5E2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F602BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F622BB2C63400F330F8 /* BalanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F642BB345E200F330F8 /* MainCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewHeader.swift; sourceTree = "<group>"; };
+		D0168F662BB36CCE00F330F8 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F682BB377CC00F330F8 /* SwappedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwappedCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F6A2BB3833900F330F8 /* SentNftCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentNftCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0168F6C2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedNfTCollectionView.swift; sourceTree = "<group>"; };
+		D0168F6E2BB3F90A00F330F8 /* CustomFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterView.swift; sourceTree = "<group>"; };
+		D0168F702BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderViewCollectionView.swift; sourceTree = "<group>"; };
+		D0168F742BB403CA00F330F8 /* RecentCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCoin.swift; sourceTree = "<group>"; };
+		D0168F772BB40BB700F330F8 /* SentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentView.swift; sourceTree = "<group>"; };
+		D0168F792BB40C4000F330F8 /* SwappedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwappedView.swift; sourceTree = "<group>"; };
+		D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecivedNfT.swift; sourceTree = "<group>"; };
+		D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +116,133 @@
 		D0168EF02BACD08100F330F8 /* TonWallet */ = {
 			isa = PBXGroup;
 			children = (
-				D0168EF12BACD08100F330F8 /* AppDelegate.swift */,
-				D0168EF32BACD08100F330F8 /* SceneDelegate.swift */,
-				D0168EF52BACD08100F330F8 /* ViewController.swift */,
-				D0168EF72BACD08100F330F8 /* Main.storyboard */,
-				D0168EFA2BACD08300F330F8 /* Assets.xcassets */,
-				D0168EFC2BACD08300F330F8 /* LaunchScreen.storyboard */,
+				D0168F582BB0138F00F330F8 /* Models */,
+				D0168F332BAE0B2C00F330F8 /* Views */,
+				D0168F4A2BAEF2B000F330F8 /* Controllers */,
+				D0168F322BAE071900F330F8 /* Extension */,
 				D0168EFF2BACD08300F330F8 /* Info.plist */,
 			);
 			path = TonWallet;
+			sourceTree = "<group>";
+		};
+		D0168F2F2BAE06FD00F330F8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D0168EF52BACD08100F330F8 /* LandPageViewController.swift */,
+				D0168F302BAE071400F330F8 /* SeedPhaseViewController.swift */,
+				D0168F402BAEBDCB00F330F8 /* WalletCreatedViewController.swift */,
+				D0168F472BAEC43600F330F8 /* SetPasswordViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D0168F322BAE071900F330F8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F362BAE0D2D00F330F8 /* TonWalletColor.swift */,
+				D0168EF32BACD08100F330F8 /* SceneDelegate.swift */,
+				D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */,
+				D0168EF12BACD08100F330F8 /* AppDelegate.swift */,
+				D0168EFC2BACD08300F330F8 /* LaunchScreen.storyboard */,
+				D0168EFA2BACD08300F330F8 /* Assets.xcassets */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D0168F332BAE0B2C00F330F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F5B2BB0232B00F330F8 /* WalletViews */,
+				D0168F3D2BAEB03D00F330F8 /* Alert */,
+				D0168F382BAE941600F330F8 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0168F382BAE941600F330F8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F392BAE944600F330F8 /* SeedPhaseHeaderView.swift */,
+				D0168F342BAE0BAE00F330F8 /* SecretWordTableViewCell.swift */,
+				D0168F422BAEC24300F330F8 /* OtpViews */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D0168F3D2BAEB03D00F330F8 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F3E2BAEB0C600F330F8 /* CustomAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		D0168F422BAEC24300F330F8 /* OtpViews */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F432BAEC24300F330F8 /* OtpBoxCell.swift */,
+				D0168F442BAEC24300F330F8 /* OtpStackViewController.swift */,
+			);
+			path = OtpViews;
+			sourceTree = "<group>";
+		};
+		D0168F492BAEEF7A00F330F8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F4B2BAEF34600F330F8 /* MainTableViewController.swift */,
+				D0168F4D2BAEF56D00F330F8 /* WalletViewController.swift */,
+				D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */,
+				D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */,
+				D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */,
+				D0168F762BB4044100F330F8 /* SwiftUIViews */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D0168F4A2BAEF2B000F330F8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F492BAEEF7A00F330F8 /* Main */,
+				D0168F2F2BAE06FD00F330F8 /* Onboarding */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D0168F582BB0138F00F330F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F592BB013A100F330F8 /* HomeViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0168F5B2BB0232B00F330F8 /* WalletViews */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F5C2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift */,
+				D0168F5E2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift */,
+				D0168F602BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift */,
+				D0168F622BB2C63400F330F8 /* BalanceCollectionViewCell.swift */,
+				D0168F642BB345E200F330F8 /* MainCollectionViewHeader.swift */,
+				D0168F702BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift */,
+				D0168F662BB36CCE00F330F8 /* SecondCollectionViewCell.swift */,
+				D0168F682BB377CC00F330F8 /* SwappedCollectionViewCell.swift */,
+				D0168F6A2BB3833900F330F8 /* SentNftCollectionViewCell.swift */,
+				D0168F6C2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift */,
+				D0168F6E2BB3F90A00F330F8 /* CustomFooterView.swift */,
+			);
+			path = WalletViews;
+			sourceTree = "<group>";
+		};
+		D0168F762BB4044100F330F8 /* SwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F742BB403CA00F330F8 /* RecentCoin.swift */,
+				D0168F772BB40BB700F330F8 /* SentView.swift */,
+				D0168F792BB40C4000F330F8 /* SwappedView.swift */,
+				D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */,
+			);
+			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +305,6 @@
 			files = (
 				D0168EFE2BACD08300F330F8 /* LaunchScreen.storyboard in Resources */,
 				D0168EFB2BACD08300F330F8 /* Assets.xcassets in Resources */,
-				D0168EF92BACD08100F330F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +315,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0168EF62BACD08100F330F8 /* ViewController.swift in Sources */,
+				D0168EF62BACD08100F330F8 /* LandPageViewController.swift in Sources */,
+				D0168F712BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift in Sources */,
+				D0168F5A2BB013A100F330F8 /* HomeViewModel.swift in Sources */,
+				D0168F4C2BAEF34600F330F8 /* MainTableViewController.swift in Sources */,
+				D0168F7C2BB40CDB00F330F8 /* RecivedNfT.swift in Sources */,
+				D0168F652BB345E200F330F8 /* MainCollectionViewHeader.swift in Sources */,
+				D0168F3A2BAE944600F330F8 /* SeedPhaseHeaderView.swift in Sources */,
+				D0168F782BB40BB700F330F8 /* SentView.swift in Sources */,
+				D0168F482BAEC43600F330F8 /* SetPasswordViewController.swift in Sources */,
+				D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */,
+				D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */,
+				D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */,
+				D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */,
+				D0168F752BB403CA00F330F8 /* RecentCoin.swift in Sources */,
+				D0168F612BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift in Sources */,
+				D0168F452BAEC24300F330F8 /* OtpBoxCell.swift in Sources */,
+				D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */,
+				D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */,
+				D0168F312BAE071400F330F8 /* SeedPhaseViewController.swift in Sources */,
+				D0168F6F2BB3F90A00F330F8 /* CustomFooterView.swift in Sources */,
+				D0168F632BB2C63400F330F8 /* BalanceCollectionViewCell.swift in Sources */,
+				D0168F352BAE0BAE00F330F8 /* SecretWordTableViewCell.swift in Sources */,
+				D0168F6D2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift in Sources */,
+				D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */,
+				D0168F462BAEC24300F330F8 /* OtpStackViewController.swift in Sources */,
+				D0168F4E2BAEF56D00F330F8 /* WalletViewController.swift in Sources */,
+				D0168F542BAEF5D500F330F8 /* SettingsViewController.swift in Sources */,
 				D0168EF22BACD08100F330F8 /* AppDelegate.swift in Sources */,
+				D0168F5F2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift in Sources */,
+				D0168F7A2BB40C4000F330F8 /* SwappedView.swift in Sources */,
+				D0168F672BB36CCE00F330F8 /* SecondCollectionViewCell.swift in Sources */,
+				D0168F372BAE0D2D00F330F8 /* TonWalletColor.swift in Sources */,
 				D0168EF42BACD08100F330F8 /* SceneDelegate.swift in Sources */,
+				D0168F3F2BAEB0C600F330F8 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D0168EF72BACD08100F330F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0168EF82BACD08100F330F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0168EFC2BACD08300F330F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,15 +497,15 @@
 				INFOPLIST_FILE = TonWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.TonWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.TonWallet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,15 +525,15 @@
 				INFOPLIST_FILE = TonWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.TonWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.TonWallet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
