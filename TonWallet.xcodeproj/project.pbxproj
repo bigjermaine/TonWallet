@@ -55,6 +55,7 @@
 		D038BAB62BE9863100D9001C /* YouSellSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB52BE9863100D9001C /* YouSellSwapView.swift */; };
 		D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB72BE98CC600D9001C /* SwapScanner.swift */; };
 		D038BABB2BE9A19000D9001C /* QrSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABA2BE9A19000D9001C /* QrSendView.swift */; };
+		D038BABD2BE9A5AE00D9001C /* BuyCardQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
@@ -117,6 +118,7 @@
 		D038BAB52BE9863100D9001C /* YouSellSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSellSwapView.swift; sourceTree = "<group>"; };
 		D038BAB72BE98CC600D9001C /* SwapScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapScanner.swift; sourceTree = "<group>"; };
 		D038BABA2BE9A19000D9001C /* QrSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrSendView.swift; sourceTree = "<group>"; };
+		D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCardQRView.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				D038BABA2BE9A19000D9001C /* QrSendView.swift */,
+				D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */,
 			);
 			path = ForthSection;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */,
 				D0168F452BAEC24300F330F8 /* OtpBoxCell.swift in Sources */,
 				D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */,
+				D038BABD2BE9A5AE00D9001C /* BuyCardQRView.swift in Sources */,
 				D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */,
 				D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */,
 				D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */,

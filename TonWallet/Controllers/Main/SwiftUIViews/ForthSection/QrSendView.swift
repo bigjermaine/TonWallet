@@ -9,10 +9,74 @@ import SwiftUI
 
 struct QrSendView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.lightWhite.ignoresSafeArea()
+            List{
+                Section(header: Text("Your TON Address")){
+                    VStack{
+                        Image("QR Code")
+                            .resizable()
+                        Text("UQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqEBI")
+                            .multilineTextAlignment(.center)
+                            .frame(width: 252)
+                        
+                        HStack{
+                            Button{
+                                
+                            }label: {
+                                Text("Copy Address")
+                                    .foregroundStyle(.blue)
+                            }
+                            Spacer()
+                            Button{
+                                
+                            }label: {
+                                Text("Share QR Code")
+                                    .foregroundStyle(.blue)
+                            }
+                        }
+                        .padding()
+                        .padding(.bottom,50)
+                    }
+                }
+                
+                Section(header: Text("Buy Crypto")){
+                    Button{
+                        
+                    }label: {
+                        HStack{
+                            Image("cardImage")
+                            Text("Buy with Card")
+                                .foregroundStyle(.black)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    Button{
+                        
+                    }label: {
+                        
+                        HStack{
+                            Image("buyCoinImage")
+                            Text("Buy with Crypto")
+                                .foregroundStyle(.black)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
     QrSendView()
+}
+
+
+extension QrSendView {
+    
 }
