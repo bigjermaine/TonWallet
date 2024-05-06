@@ -29,6 +29,9 @@ struct SwapView: View {
                     
                     
                 }
+                .onChange(of:text) { x in
+                    check1()
+                }
             }
             .navigationDestination(for: SwapRoutes.self) { route in
                 switch route {

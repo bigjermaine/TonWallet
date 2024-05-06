@@ -440,7 +440,9 @@ extension WalletViewController {
     }
     
     func didTapSwap() {
-        
+        let vc = UIHostingController(rootView:  SwapView())
+        present(vc, animated: true)
+      
     }
     
     
