@@ -16,7 +16,9 @@ class AssetsViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
     /*
     // MARK: - Navigation
 

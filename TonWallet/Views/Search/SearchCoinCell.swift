@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct SearchCoinCell: View {
+    var searchModel:SearchModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image(searchModel.coinImage)
+                .resizable()
+                .frame(width: 40,height: 40)
+            VStack(alignment:.leading){
+                Text(searchModel.coinName)
+                    .font(.system(size: 16))
+                    .bold()
+                Text(searchModel.coinAmount)
+                    .font(.system(size: 13))
+                    .foregroundStyle(.gray)
+            }
+          
+            Spacer()
+        }
+       
     }
 }
 
 #Preview {
-    SearchCoinCell()
+    SearchCoinCell(searchModel: SearchModel(coinImage:"toncoinIcon", coinName: "Ton", coinAmount: "12.40"))
 }

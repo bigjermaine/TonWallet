@@ -15,7 +15,9 @@ class BrowseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
     /*
     // MARK: - Navigation
 

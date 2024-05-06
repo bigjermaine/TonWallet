@@ -8,9 +8,8 @@
 import UIKit
 import SwiftUI
 
-class WalletViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    
+class WalletViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ActionButtonsCollectionViewCellProtocol {
+   
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +70,9 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
         configureDelegateAndDataSource()
         setupNavBar()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
     @objc func inboxTapped() {
         
     }
@@ -89,27 +90,7 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
    
     func centerTitle(){
-//        navigationController?.navigationBar.barTintColor = .white
-//        navigationController?.navigationBar.backgroundColor = .systemBlue
-//        navigationController?.navigationBar.backgroundColor = .clear
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//    
-//            // Set navigation bar title attributes
-////            navigationController?.navigationBar.titleTextAttributes = [
-////                .font: UIFont.systemFont(ofSize: 40)
-////            ]
-//            // Set navigation item title
-//            title = "$12 229.5"
-//           for navItem in(self.navigationController?.navigationBar.subviews)! {
-//                for itemSubView in navItem.subviews {
-//                    if let largeLabel = itemSubView as? UILabel {
-//                       largeLabel.center = CGPoint(x: navItem.bounds.width/2, y: navItem.bounds.height/2)
-//                       return;
-//                    }
-//                }
-//           }
-//        
+
         navigationItem.rightBarButtonItem  = adjustButtonRightButtonItem
         navigationItem.leftBarButtonItem = adjustButtonLeftButtonItem
        }
@@ -283,6 +264,7 @@ extension WalletViewController {
             guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:ActionButtonsCollectionViewCell.identifier, for: indexPath) as? ActionButtonsCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.delegate = self
             return cell
         case .walletBalance(_):
             guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:BalanceCollectionViewCell.identifier, for: indexPath) as? BalanceCollectionViewCell else {
@@ -293,53 +275,53 @@ extension WalletViewController {
        
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let indexPath = IndexPath(item: 0, section: 0)
-        guard let cell = self.homeCollectionView.cellForItem(at: indexPath) as? BalanceCollectionViewCell else {
-               return
-           }
-        
-        let safeAreaTop = UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0
-        
-        let magicalSafeAreaTop:CGFloat = safeAreaTop + (navigationController?.navigationBar.frame.height ?? 0)
-        
-        let offset = scrollView.contentOffset.y + magicalSafeAreaTop
-        
-        
-        let alpha:CGFloat =  1 - (scrollView.contentOffset.y + magicalSafeAreaTop)/magicalSafeAreaTop
-        print(alpha)
-        if alpha <= 0.94  {
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
-                DispatchQueue.main.async {
-                    self.stackView.isHidden = false
-                    cell.stackView.alpha = 0.00
-                    self.stackView.alpha = 1.0
-                  
-                }
-               }, completion: nil)
-           }else if alpha ==  0.9482200647249192 {
-               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-             
-                   DispatchQueue.main.async {
-                       self.stackView.isHidden = false
-                       self.stackView.alpha = 0.0
-                       cell.stackView.alpha = 1.00
-                   }
-                  
-                  }, completion: nil)
-               
-           }else {
-               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
-                   DispatchQueue.main.async {
-                       self.stackView.isHidden = false
-                       cell.stackView.alpha = 0.00
-                       self.stackView.alpha = 1.0
-                      
-                   }
-                  }, completion: nil)
-           }
-           
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let indexPath = IndexPath(item: 0, section: 0)
+//        guard let cell = self.homeCollectionView.cellForItem(at: indexPath) as? BalanceCollectionViewCell else {
+//               return
+//           }
+//        
+//        let safeAreaTop = UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0
+//        
+//        let magicalSafeAreaTop:CGFloat = safeAreaTop + (navigationController?.navigationBar.frame.height ?? 0)
+//        
+//        let offset = scrollView.contentOffset.y + magicalSafeAreaTop
+//        
+//        
+//        let alpha:CGFloat =  1 - (scrollView.contentOffset.y + magicalSafeAreaTop)/magicalSafeAreaTop
+//        print(alpha)
+//        if alpha <= 0.94  {
+//            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+//                DispatchQueue.main.async {
+//                    self.stackView.isHidden = false
+//                    cell.stackView.alpha = 0.00
+//                    self.stackView.alpha = 1.0
+//                  
+//                }
+//               }, completion: nil)
+//           }else if alpha ==  0.9482200647249192 {
+//               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+//             
+//                   DispatchQueue.main.async {
+//                       self.stackView.isHidden = false
+//                       self.stackView.alpha = 0.0
+//                       cell.stackView.alpha = 1.00
+//                   }
+//                  
+//                  }, completion: nil)
+//               
+//           }else {
+//               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+//                   DispatchQueue.main.async {
+//                       self.stackView.isHidden = false
+//                       cell.stackView.alpha = 0.00
+//                       self.stackView.alpha = 1.0
+//                      
+//                   }
+//                  }, completion: nil)
+//           }
+//           
+//    }
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] section, layoutEnvironment in
             switch self?.editorialSectionType[section] {
@@ -442,6 +424,25 @@ extension WalletViewController {
         
         return section
     }
+    func didTapAdd() {
+        
+    }
+    
+    func didTapSend() {
+        let vc = UIHostingController(rootView:ChooseCurrencyView())
+        present(vc, animated: true)
+    }
+    
+    func didTapEarn() {
+        
+    }
+    
+    func didTapSwap() {
+        
+    }
+    
+    
+    
 }
 
 

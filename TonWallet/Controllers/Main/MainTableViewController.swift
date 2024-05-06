@@ -7,14 +7,19 @@
 
 import UIKit
 
-class MainTableViewController: UITabBarController {
-
+class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
+    var reportButton: UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         configureSetupTabbarViewController()
+        configureTabbar()
+        presentMenu()
+        self.delegate = self
     }
-
+    
+   
     func configureSetupTabbarViewController() {
         let Vc1 =  WalletViewController()
         let Vc2 =  AssetsViewController()
@@ -41,26 +46,53 @@ class MainTableViewController: UITabBarController {
         nav1.navigationBar.backgroundColor = .clear
         nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
         nav1.navigationBar.shadowImage = UIImage()
-//
-//        nav2.navigationBar.backgroundColor = .clear
-//        nav2.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        nav2.navigationBar.shadowImage = UIImage()
-//
-//     
-//        nav3.navigationBar.backgroundColor = .clear
-//        nav3.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        nav3.navigationBar.shadowImage = UIImage()
-//
-//     
-//        nav4.navigationBar.backgroundColor = .clear
-//        nav4.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        nav4.navigationBar.shadowImage = UIImage()
-//
-//        UITabBar.appearance().barTintColor = .gray
-//        UITabBar.appearance().tintColor  = .white
-//        UITabBar.appearance().selectedImageTintColor = .systemBlue
         
-        setViewControllers([nav1,nav2,nav3,nav4], animated: false)
         
+        let tapmeitems = UIMenu(title: "", options: .displayInline, children: [
+            UIAction(title: "Like", image: UIImage(named: "sharelike"), handler: {[weak self] _ in
+                
+            }),
+            UIAction(title: "Dowload", image: UIImage(named: "sharedowload2"), handler: {[weak self] _ in
+                
+            }),
+            UIAction(title: "Comment", image: UIImage(named: "sharecomment"), handler: {[weak self] _ in
+                
+            }),
+            UIAction(title: "Share", image: UIImage(named: "shareshare"), handler: {[weak self] _ in
+                
+            }),
+        ])
+        
+       let menu = UIMenu(title: "", children: [tapmeitems])
+      setViewControllers([nav1,nav2,nav3,nav4], animated: false)
+    
     }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 3 {
+            presentMenu()
+        }
+    }
+
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected view controller")
+    }
+    func configureTabbar() {
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = UIColor.white
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+        }
+    }
+    
+    
+    func  presentMenu() {
+       
+    }
+    
 }

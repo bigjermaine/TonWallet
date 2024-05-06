@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol ActionButtonsCollectionViewCellProtocol:AnyObject {
+    func didTapAdd()
+    func didTapSend()
+    func didTapEarn()
+    func didTapSwap()
+}
+
+
 class ActionButtonsCollectionViewCell: UICollectionViewCell {
     static let identifier = "ActionButtonsCollectionViewCell"
     let addButton = TransactionCustomButton()
@@ -14,7 +22,7 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
     let earnButton = TransactionCustomButton()
     let swapButton = TransactionCustomButton()
     
-    
+    weak var delegate:ActionButtonsCollectionViewCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +35,12 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configureButton()
         configureStack()
+        sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
        
     }
-    
+    @objc func didTapSend() {
+        delegate?.didTapSend()
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
