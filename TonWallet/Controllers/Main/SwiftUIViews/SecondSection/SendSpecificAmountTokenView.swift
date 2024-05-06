@@ -12,6 +12,7 @@ struct SendSpecificAmountTokenView: View {
     @State var coinAmount = "120"
     @State var checkCoinAmountColor:Color = .black
     @State var continueBackgroundColor:Color = .blue
+    @State var tonBalanceCheck:String = "Continue"
     @Binding  var path: [AuthRoutes]
     @State var showTotalAmountBool:Bool = false
     var body: some View {
@@ -44,7 +45,7 @@ struct SendSpecificAmountTokenView: View {
                     path.append(.SendTonFillDescriptionView)
                 
             }label: {
-                Text("Continue")
+                Text(tonBalanceCheck)
                     .foregroundStyle(.white)
             }
             .frame(maxWidth: .infinity, maxHeight: 50)
@@ -81,9 +82,11 @@ struct SendSpecificAmountTokenView: View {
         guard let x2 = Int(coinAmount)  else {return}
         if  x1 > x2 {
             checkCoinAmountColor = .red
+            tonBalanceCheck = "Insufficient TON Balance"
             continueBackgroundColor = .blue.opacity(0.3)
         }else {
             checkCoinAmountColor = .black
+            tonBalanceCheck =  "Continue"
             continueBackgroundColor = .blue
             
         }

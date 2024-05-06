@@ -1,16 +1,16 @@
 //
-//  SendTonPasswordView.swift
+//  SwapViewPassword.swift
 //  TonWallet
 //
-//  Created by MacBook AIR on 04/05/2024.
+//  Created by MacBook AIR on 06/05/2024.
 //
 
 import SwiftUI
 
-struct SendTonPasswordView: View {
+struct SwapViewPassword: View {
     @State private var enteredNumbers: [String] = Array(repeating: "", count: 4)
     @State private var password: String = ""
-    @Binding  var path: [AuthRoutes]
+    @Binding  var path: [SwapRoutes]
     var body: some View {
         VStack(spacing: 10) {
             VStack(spacing: 10) {
@@ -74,7 +74,7 @@ struct SendTonPasswordView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button{
                     HapticManager.shared.vibrate(for: .success)
-                    path.removeAll()
+                   // path.removeAll()
                 }label: {
                     Image("CloseButton")
                 }
@@ -85,7 +85,7 @@ struct SendTonPasswordView: View {
            .onChange(of: password) { x in
                if password.count ==  4 {
                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-                       path.append(.SendDisplayCoinView)
+                     //  path.append(.SendDisplayCoinView)
                    }
                 
                }
@@ -107,83 +107,15 @@ struct SendTonPasswordView: View {
                    password = enteredNumbers.joined()
                }
            }
+    
+    func scan() {
+        HapticManager.shared.vibrate(for: .warning)
+        path.append(.Scan)
+       
+    }
 }
 
 #Preview {
-    SendTonPasswordView(path: .constant([.SendTonPasswordView]))
+    SwapViewPassword( path: .constant([.confirmSwap]))
 }
-
-struct PasswordView: View {
-    let enteredNumbers: [String]
-        
-        var body: some View {
-            HStack(spacing: 10) {
-                ForEach(enteredNumbers, id: \.self) { number in
-                    Circle()
-                        .stroke(Color.black, lineWidth: 1)
-                        .background(Circle().foregroundColor(number.isEmpty ? Color.white : Color.black))
-                        .frame(width: 20, height: 20)
-                }
-            }
-            .padding()
-        }
-}
-
-struct NumberButton: View {
-    let number: String
-    let letters: String
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                VStack{
-                    Text(number)
-                        .font(.title)
-                        .foregroundColor(.black)
-                        
-                    Text(letters)
-                        .foregroundColor(.black)
-                        .font(.caption)
-                }
-                .frame(width: 70, height: 70)
-                .background(Color.gray.opacity(0.3))
-                .cornerRadius(35)
-            }
-        }
-    }
-}
-
-struct ClearButton: View {
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            Image("deleteIcon")
-                .font(.title)
-                .foregroundColor(.black)
-                .frame(width: 70, height: 70)
-                .cornerRadius(35)
-        }
-    }
-}
-
-
-struct ScanButton: View {
-    let action: () -> Void
-    
-    var body: some View {
-            ZStack{
-            Button(action: action) {
-                Image("scanIcon")
-                    .resizable()
-                    .foregroundColor(.black)
-                    .frame(width: 32, height: 32)
-            }
-                .frame(width: 70, height: 70)
-                .cornerRadius(35)
-        }
-    }
-}
-
-
+  

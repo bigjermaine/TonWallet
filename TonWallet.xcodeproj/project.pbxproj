@@ -26,7 +26,7 @@
 		D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */; };
 		D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */; };
 		D0168F542BAEF5D500F330F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */; };
-		D0168F5A2BB013A100F330F8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F592BB013A100F330F8 /* HomeViewModel.swift */; };
+		D0168F5A2BB013A100F330F8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F592BB013A100F330F8 /* HomeModel.swift */; };
 		D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F5C2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift */; };
 		D0168F5F2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F5E2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift */; };
 		D0168F612BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F602BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift */; };
@@ -47,11 +47,18 @@
 		D038BAA12BE8A4DD00D9001C /* QrScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA02BE8A4DD00D9001C /* QrScannerView.swift */; };
 		D038BAA32BE8ADD400D9001C /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */; };
 		D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA72BE8AE9C00D9001C /* CameraView.swift */; };
+		D038BAAA2BE8F8BB00D9001C /* SellBuyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA92BE8F8BB00D9001C /* SellBuyModel.swift */; };
+		D038BAAD2BE8FCE800D9001C /* BuySellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAAC2BE8FCE800D9001C /* BuySellViewModel.swift */; };
+		D038BAB02BE8FDDA00D9001C /* SwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAAF2BE8FDDA00D9001C /* SwapView.swift */; };
+		D038BAB22BE94A1700D9001C /* SwapViewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB12BE94A1700D9001C /* SwapViewPassword.swift */; };
+		D038BAB42BE94AE000D9001C /* YouBuySwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB32BE94AE000D9001C /* YouBuySwapView.swift */; };
+		D038BAB62BE9863100D9001C /* YouSellSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB52BE9863100D9001C /* YouSellSwapView.swift */; };
+		D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB72BE98CC600D9001C /* SwapScanner.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
 		D08F552D2BE617C500E3F933 /* SearchCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */; };
-		D0E2D7912BE620C700A4AD60 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7902BE620C700A4AD60 /* SearchViewModel.swift */; };
+		D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7902BE620C700A4AD60 /* SearchModel.swift */; };
 		D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */; };
 		D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7942BE663C800A4AD60 /* SendSpecificAmountTokenView.swift */; };
 		D0E2D7972BE6753200A4AD60 /* SendTonFillDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7962BE6753200A4AD60 /* SendTonFillDescriptionView.swift */; };
@@ -80,7 +87,7 @@
 		D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D0168F592BB013A100F330F8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D0168F592BB013A100F330F8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D0168F5C2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0168F5E2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0168F602BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,11 +108,18 @@
 		D038BAA02BE8A4DD00D9001C /* QrScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrScannerView.swift; sourceTree = "<group>"; };
 		D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		D038BAA72BE8AE9C00D9001C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D038BAA92BE8F8BB00D9001C /* SellBuyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBuyModel.swift; sourceTree = "<group>"; };
+		D038BAAC2BE8FCE800D9001C /* BuySellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellViewModel.swift; sourceTree = "<group>"; };
+		D038BAAF2BE8FDDA00D9001C /* SwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapView.swift; sourceTree = "<group>"; };
+		D038BAB12BE94A1700D9001C /* SwapViewPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapViewPassword.swift; sourceTree = "<group>"; };
+		D038BAB32BE94AE000D9001C /* YouBuySwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBuySwapView.swift; sourceTree = "<group>"; };
+		D038BAB52BE9863100D9001C /* YouSellSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSellSwapView.swift; sourceTree = "<group>"; };
+		D038BAB72BE98CC600D9001C /* SwapScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapScanner.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinCell.swift; sourceTree = "<group>"; };
-		D0E2D7902BE620C700A4AD60 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		D0E2D7902BE620C700A4AD60 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientAddressView.swift; sourceTree = "<group>"; };
 		D0E2D7942BE663C800A4AD60 /* SendSpecificAmountTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSpecificAmountTokenView.swift; sourceTree = "<group>"; };
 		D0E2D7962BE6753200A4AD60 /* SendTonFillDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTonFillDescriptionView.swift; sourceTree = "<group>"; };
@@ -142,6 +156,7 @@
 		D0168EF02BACD08100F330F8 /* TonWallet */ = {
 			isa = PBXGroup;
 			children = (
+				D038BAAB2BE8FCC100D9001C /* ViewModel */,
 				D08F55232BE51FF600E3F933 /* Manager */,
 				D0168F582BB0138F00F330F8 /* Models */,
 				D0168F332BAE0B2C00F330F8 /* Views */,
@@ -231,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				D0168F492BAEEF7A00F330F8 /* Main */,
+				D038BAAE2BE8FD7A00D9001C /* ThirdSection */,
 				D0168F2F2BAE06FD00F330F8 /* Onboarding */,
 			);
 			path = Controllers;
@@ -239,9 +255,9 @@
 		D0168F582BB0138F00F330F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D0168F592BB013A100F330F8 /* HomeViewModel.swift */,
-				D0E2D7902BE620C700A4AD60 /* SearchViewModel.swift */,
-				D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */,
+				D0168F592BB013A100F330F8 /* HomeModel.swift */,
+				D0E2D7902BE620C700A4AD60 /* SearchModel.swift */,
+				D038BAA92BE8F8BB00D9001C /* SellBuyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +298,27 @@
 				D038BAA72BE8AE9C00D9001C /* CameraView.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		D038BAAB2BE8FCC100D9001C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */,
+				D038BAAC2BE8FCE800D9001C /* BuySellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D038BAAE2BE8FD7A00D9001C /* ThirdSection */ = {
+			isa = PBXGroup;
+			children = (
+				D038BAAF2BE8FDDA00D9001C /* SwapView.swift */,
+				D038BAB12BE94A1700D9001C /* SwapViewPassword.swift */,
+				D038BAB32BE94AE000D9001C /* YouBuySwapView.swift */,
+				D038BAB52BE9863100D9001C /* YouSellSwapView.swift */,
+				D038BAB72BE98CC600D9001C /* SwapScanner.swift */,
+			);
+			path = ThirdSection;
 			sourceTree = "<group>";
 		};
 		D08F55232BE51FF600E3F933 /* Manager */ = {
@@ -391,7 +428,7 @@
 				D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */,
 				D0168EF62BACD08100F330F8 /* LandPageViewController.swift in Sources */,
 				D0168F712BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift in Sources */,
-				D0168F5A2BB013A100F330F8 /* HomeViewModel.swift in Sources */,
+				D0168F5A2BB013A100F330F8 /* HomeModel.swift in Sources */,
 				D0168F4C2BAEF34600F330F8 /* MainTableViewController.swift in Sources */,
 				D0168F7C2BB40CDB00F330F8 /* RecivedNfT.swift in Sources */,
 				D0168F652BB345E200F330F8 /* MainCollectionViewHeader.swift in Sources */,
@@ -400,27 +437,34 @@
 				D0168F782BB40BB700F330F8 /* SentView.swift in Sources */,
 				D0168F482BAEC43600F330F8 /* SetPasswordViewController.swift in Sources */,
 				D038BA9F2BE770FF00D9001C /* SendDisplayCoinView.swift in Sources */,
+				D038BAAA2BE8F8BB00D9001C /* SellBuyModel.swift in Sources */,
 				D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */,
 				D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */,
+				D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */,
 				D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */,
 				D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */,
 				D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */,
+				D038BAAD2BE8FCE800D9001C /* BuySellViewModel.swift in Sources */,
+				D038BAB22BE94A1700D9001C /* SwapViewPassword.swift in Sources */,
+				D038BAB42BE94AE000D9001C /* YouBuySwapView.swift in Sources */,
 				D0168F752BB403CA00F330F8 /* RecentCoin.swift in Sources */,
 				D0168F612BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift in Sources */,
 				D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */,
 				D0168F452BAEC24300F330F8 /* OtpBoxCell.swift in Sources */,
-				D0E2D7912BE620C700A4AD60 /* SearchViewModel.swift in Sources */,
+				D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */,
 				D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */,
 				D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */,
 				D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */,
 				D0168F312BAE071400F330F8 /* SeedPhaseViewController.swift in Sources */,
 				D0168F6F2BB3F90A00F330F8 /* CustomFooterView.swift in Sources */,
+				D038BAB62BE9863100D9001C /* YouSellSwapView.swift in Sources */,
 				D0E2D7992BE6788700A4AD60 /* SendTonPasswordView.swift in Sources */,
 				D0168F632BB2C63400F330F8 /* BalanceCollectionViewCell.swift in Sources */,
 				D0168F352BAE0BAE00F330F8 /* SecretWordTableViewCell.swift in Sources */,
 				D038BAA12BE8A4DD00D9001C /* QrScannerView.swift in Sources */,
 				D0168F6D2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift in Sources */,
 				D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */,
+				D038BAB02BE8FDDA00D9001C /* SwapView.swift in Sources */,
 				D0168F462BAEC24300F330F8 /* OtpStackViewController.swift in Sources */,
 				D08F552D2BE617C500E3F933 /* SearchCoinCell.swift in Sources */,
 				D0168F4E2BAEF56D00F330F8 /* WalletViewController.swift in Sources */,

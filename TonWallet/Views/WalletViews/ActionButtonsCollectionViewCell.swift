@@ -36,8 +36,13 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         configureButton()
         configureStack()
         sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
+        swapButton.addTarget(self, action: #selector(didTapSwap), for: .touchUpInside)
        
     }
+    @objc func didTapSwap() {
+        delegate?.didTapSwap()
+    }
+    
     @objc func didTapSend() {
         delegate?.didTapSend()
     }
