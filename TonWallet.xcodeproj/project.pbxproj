@@ -54,6 +54,7 @@
 		D038BAB42BE94AE000D9001C /* YouBuySwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB32BE94AE000D9001C /* YouBuySwapView.swift */; };
 		D038BAB62BE9863100D9001C /* YouSellSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB52BE9863100D9001C /* YouSellSwapView.swift */; };
 		D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB72BE98CC600D9001C /* SwapScanner.swift */; };
+		D038BABB2BE9A19000D9001C /* QrSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABA2BE9A19000D9001C /* QrSendView.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
@@ -115,6 +116,7 @@
 		D038BAB32BE94AE000D9001C /* YouBuySwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBuySwapView.swift; sourceTree = "<group>"; };
 		D038BAB52BE9863100D9001C /* YouSellSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSellSwapView.swift; sourceTree = "<group>"; };
 		D038BAB72BE98CC600D9001C /* SwapScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapScanner.swift; sourceTree = "<group>"; };
+		D038BABA2BE9A19000D9001C /* QrSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrSendView.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -246,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				D0168F492BAEEF7A00F330F8 /* Main */,
-				D038BAAE2BE8FD7A00D9001C /* ThirdSection */,
 				D0168F2F2BAE06FD00F330F8 /* Onboarding */,
 			);
 			path = Controllers;
@@ -287,6 +288,8 @@
 				D0168F772BB40BB700F330F8 /* SentView.swift */,
 				D0168F792BB40C4000F330F8 /* SwappedView.swift */,
 				D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */,
+				D038BAB92BE99B2A00D9001C /* ForthSection */,
+				D038BAAE2BE8FD7A00D9001C /* ThirdSection */,
 				D08F55262BE53D3D00E3F933 /* SecondSection */,
 			);
 			path = SwiftUIViews;
@@ -319,6 +322,14 @@
 				D038BAB72BE98CC600D9001C /* SwapScanner.swift */,
 			);
 			path = ThirdSection;
+			sourceTree = "<group>";
+		};
+		D038BAB92BE99B2A00D9001C /* ForthSection */ = {
+			isa = PBXGroup;
+			children = (
+				D038BABA2BE9A19000D9001C /* QrSendView.swift */,
+			);
+			path = ForthSection;
 			sourceTree = "<group>";
 		};
 		D08F55232BE51FF600E3F933 /* Manager */ = {
@@ -424,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */,
+				D038BABB2BE9A19000D9001C /* QrSendView.swift in Sources */,
 				D038BAA32BE8ADD400D9001C /* CameraViewModel.swift in Sources */,
 				D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */,
 				D0168EF62BACD08100F330F8 /* LandPageViewController.swift in Sources */,

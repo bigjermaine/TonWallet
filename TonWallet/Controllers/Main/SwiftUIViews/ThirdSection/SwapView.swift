@@ -14,25 +14,41 @@ struct SwapView: View {
     @State var tonBalanceCheck:String = "Enter Amounts"
     @State var continueBackgroundColor:Color = .blue.opacity(0.3)
     @Environment(\.dismiss) var dismiss
+    @State var shown = false
+    @State var isSuccess = false
+    @State var message = ""
+    @State var c: AlertAction?
     @State  var path: [SwapRoutes] = []
     @ObservedObject var vm = BuySellViewModel()
     var body: some View {
         NavigationStack(path: $path){
             ZStack{
-                Color.lightWhite.ignoresSafeArea()
-                VStack{
-                    headerBar
-                    firstSection
-                    VStack(spacing:0){
-                        listView
+                ZStack{
+                    Color.lightWhite.ignoresSafeArea()
+                    VStack{
+                        headerBar
+                        firstSection
+                        VStack(spacing:0){
+                            listView
+                        }
+                        
+                        
                     }
-                    
-                    
+                    .onChange(of:text) { x in
+                        check1()
+                    }
                 }
-                .onChange(of:text) { x in
-                    check1()
+                Color.black.opacity(shown ? 0.2 : 0)
+                    .ignoresSafeArea()
+               
+
+                if shown {
+                    AlertView(shown: $shown, closureA: $c, isSuccess: isSuccess, message: message)
                 }
             }
+           
+          
+          
             .navigationDestination(for: SwapRoutes.self) { route in
                 switch route {
                 case.confirmSwap:
@@ -95,6 +111,9 @@ extension SwapView {
                 }label: {
                     Text("Swap Details")
                         .font(.system(size: 17))
+                        .onTapGesture {
+                            shown = true
+                        }
                 }
                 
             }
@@ -155,6 +174,7 @@ extension SwapView {
                     Spacer()
                    TextField("0", text: $text)
                         .keyboardType(.numberPad)
+                        .bold()
                         .frame(width: 110)
                         .font(.system(size: 24))
                         .multilineTextAlignment(.trailing)
@@ -201,6 +221,7 @@ extension SwapView {
                     Spacer()
                     TextField("0", text: $text)
                         .keyboardType(.numberPad)
+                        .bold()
                         .frame(width: 110)
                         .font(.system(size: 24))
                         .multilineTextAlignment(.trailing)
@@ -258,3 +279,54 @@ enum SwapRoutes: Hashable {
     case Scan
    
 }
+
+
+
+struct AlertView: View {
+     
+     @Binding var shown: Bool
+     @Binding var closureA: AlertAction?
+     var isSuccess: Bool
+     var message: String
+     
+     var body: some View {
+         VStack {
+             Image("questionImageIcon")
+                 .padding(.top,2)
+             Text("Price Impact")
+                 .foregroundColor(Color.black)
+                 .bold()
+                 .padding(.bottom,10)
+             
+             VStack(spacing:20){
+                 Text("This shows how much your trade might change the token price.")
+                     .multilineTextAlignment(.center)
+                     .font(.system(size: 13))
+                 Text("Big trades can make the price go up or down more. Lower is usually better. how much your trade might change the token price.")
+                     .multilineTextAlignment(.center)
+                     .font(.system(size: 13))
+             }
+            Divider()
+             
+             Button("OK") {
+                    closureA = .cancel
+                    shown.toggle()
+                }
+                .foregroundColor(.blue)
+                .padding(.top,10)
+             
+         }.frame(width: 270, height: 253)
+         
+         .background(Color.white)
+         .cornerRadius(12)
+         .clipped()
+         
+     }
+ }
+
+enum AlertAction {
+    case ok
+    case cancel
+    case others
+}
+

@@ -426,6 +426,7 @@ extension WalletViewController {
     }
     func didTapAdd() {
         
+        self.present(self.createActionSheet(), animated: true, completion: nil)
     }
     
     func didTapSend() {
@@ -446,7 +447,29 @@ extension WalletViewController {
     }
     
     
-    
+    private func createActionSheet()  -> UIAlertController {
+            let actionSheet = UIAlertController(title: nil, message:nil, preferredStyle: .actionSheet)
+            
+            let buyWithCardAction = UIAlertAction(title: "Buy with Card", style: .default) { _ in
+                // Handle Buy with Card action
+            }
+            actionSheet.addAction(buyWithCardAction)
+            
+            let buyWithCryptoAction = UIAlertAction(title: "Buy with Crypto", style: .default) { _ in
+                // Handle Buy with Crypto action
+            }
+            actionSheet.addAction(buyWithCryptoAction)
+            
+            let receiveQRInvoiceAction = UIAlertAction(title: "Receive with QR or Invoice", style: .default) { _ in
+                // Handle Receive with QR or Invoice action
+            }
+            actionSheet.addAction(receiveQRInvoiceAction)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            actionSheet.addAction(cancelAction)
+            
+            return actionSheet
+        }
 }
 
 

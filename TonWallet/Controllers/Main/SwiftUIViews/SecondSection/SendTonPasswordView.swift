@@ -62,7 +62,7 @@ struct SendTonPasswordView: View {
                        
                        HStack(spacing: 20) {
                            
-                           ScanButton(action: self.clearLast)
+                           ScanButton(action: self.scan)
                            NumberButton(number: "0", letters: "", action: { self.enteredNumber(number: "0") })
                            ClearButton(action: self.clearLast)
                        }
@@ -107,6 +107,11 @@ struct SendTonPasswordView: View {
                    password = enteredNumbers.joined()
                }
            }
+    
+    func scan() {
+        HapticManager.shared.vibrate(for: .warning)
+        path.append(.QrScanner)
+    }
 }
 
 #Preview {

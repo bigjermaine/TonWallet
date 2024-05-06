@@ -37,7 +37,14 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         configureStack()
         sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
         swapButton.addTarget(self, action: #selector(didTapSwap), for: .touchUpInside)
-       
+        addButton.addTarget(self, action: #selector(didTapBuy), for: .touchUpInside)
+        earnButton.addTarget(self, action: #selector(didTapEarn), for: .touchUpInside)
+    }
+    @objc func didTapEarn() {
+        delegate?.didTapEarn()
+    }
+    @objc func didTapBuy() {
+        delegate?.didTapAdd()
     }
     @objc func didTapSwap() {
         delegate?.didTapSwap()
