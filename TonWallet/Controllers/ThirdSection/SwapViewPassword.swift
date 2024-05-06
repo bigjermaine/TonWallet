@@ -62,7 +62,7 @@ struct SwapViewPassword: View {
                        
                        HStack(spacing: 20) {
                            
-                           ScanButton(action: self.clearLast)
+                           ScanButton(action: self.scan)
                            NumberButton(number: "0", letters: "", action: { self.enteredNumber(number: "0") })
                            ClearButton(action: self.clearLast)
                        }
@@ -74,7 +74,7 @@ struct SwapViewPassword: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button{
                     HapticManager.shared.vibrate(for: .success)
-                   // path.removeAll()
+                    path.removeAll()
                 }label: {
                     Image("CloseButton")
                 }

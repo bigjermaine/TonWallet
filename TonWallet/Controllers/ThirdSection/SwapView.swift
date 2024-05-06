@@ -49,6 +49,7 @@ struct SwapView: View {
                
                 case .Scan:
                     SwapScanner(path: $path)
+                        .environmentObject(vm)
                 }
             }
         }
@@ -217,7 +218,7 @@ extension SwapView {
     var headerBar:some View {
         HStack{
             Button{
-                dismiss()
+                text = ""
             }label: {
                 Image(systemName: "goforward")
                     .resizable()
