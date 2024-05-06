@@ -24,7 +24,8 @@ struct RecipientAddressView: View {
             ScanSearchBar(searchText:$searchText,hasCancel: true) {
                 
             } onCancel: {
-                
+                HapticManager.shared.vibrateForSelection()
+                path.append(.QrScanner)
             }
             Text("Recent")
                 .font(.title3)

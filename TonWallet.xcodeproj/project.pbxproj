@@ -45,6 +45,8 @@
 		D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */; };
 		D038BA9F2BE770FF00D9001C /* SendDisplayCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BA9E2BE770FE00D9001C /* SendDisplayCoinView.swift */; };
 		D038BAA12BE8A4DD00D9001C /* QrScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA02BE8A4DD00D9001C /* QrScannerView.swift */; };
+		D038BAA32BE8ADD400D9001C /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */; };
+		D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAA72BE8AE9C00D9001C /* CameraView.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
@@ -97,6 +99,8 @@
 		D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusExtension.swift; sourceTree = "<group>"; };
 		D038BA9E2BE770FE00D9001C /* SendDisplayCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDisplayCoinView.swift; sourceTree = "<group>"; };
 		D038BAA02BE8A4DD00D9001C /* QrScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrScannerView.swift; sourceTree = "<group>"; };
+		D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		D038BAA72BE8AE9C00D9001C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			children = (
 				D0168F592BB013A100F330F8 /* HomeViewModel.swift */,
 				D0E2D7902BE620C700A4AD60 /* SearchViewModel.swift */,
+				D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +276,14 @@
 			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
+		D038BAA62BE8AE8A00D9001C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				D038BAA72BE8AE9C00D9001C /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		D08F55232BE51FF600E3F933 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +302,7 @@
 				D0E2D7982BE6788700A4AD60 /* SendTonPasswordView.swift */,
 				D038BA9E2BE770FE00D9001C /* SendDisplayCoinView.swift */,
 				D038BAA02BE8A4DD00D9001C /* QrScannerView.swift */,
+				D038BAA62BE8AE8A00D9001C /* Camera */,
 			);
 			path = SecondSection;
 			sourceTree = "<group>";
@@ -373,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */,
+				D038BAA32BE8ADD400D9001C /* CameraViewModel.swift in Sources */,
 				D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */,
 				D0168EF62BACD08100F330F8 /* LandPageViewController.swift in Sources */,
 				D0168F712BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift in Sources */,
@@ -386,6 +401,7 @@
 				D0168F482BAEC43600F330F8 /* SetPasswordViewController.swift in Sources */,
 				D038BA9F2BE770FF00D9001C /* SendDisplayCoinView.swift in Sources */,
 				D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */,
+				D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */,
 				D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */,
 				D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */,
 				D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */,
@@ -563,7 +579,8 @@
 				DEVELOPMENT_TEAM = HNS64TAJ9X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TonWallet/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow TonWallet to Use Your Camera For You TO Able To Scan Codes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow TonWallet to Use Your Camera For You To be Able To Scan Codes";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please Allow TonWallet to Use Your mic  For You To be Able To Scan Codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -593,7 +610,8 @@
 				DEVELOPMENT_TEAM = HNS64TAJ9X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TonWallet/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow TonWallet to Use Your Camera For You TO Able To Scan Codes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow TonWallet to Use Your Camera For You To be Able To Scan Codes";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please Allow TonWallet to Use Your mic  For You To be Able To Scan Codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

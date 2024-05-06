@@ -41,7 +41,7 @@ struct ChooseCurrencyView: View {
                         }
                         .background(Color.white)
                         .onTapGesture {
-                            path.append(.QrScanner)
+                            path.append(.RecipientAddressView)
                             HapticManager.shared.vibrateForSelection()
                         }
                         
@@ -66,7 +66,7 @@ struct ChooseCurrencyView: View {
                 case.SendDisplayCoinView:
                     SendDisplayCoinView(path: $path)
                 case.QrScanner:
-                    QRScannerView()
+                    ScannerView(path: $path)
                 }
             }
         }
