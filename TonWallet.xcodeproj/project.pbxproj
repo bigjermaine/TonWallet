@@ -56,6 +56,10 @@
 		D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAB72BE98CC600D9001C /* SwapScanner.swift */; };
 		D038BABB2BE9A19000D9001C /* QrSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABA2BE9A19000D9001C /* QrSendView.swift */; };
 		D038BABD2BE9A5AE00D9001C /* BuyCardQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */; };
+		D038BABF2BE9AC1D00D9001C /* QrSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BABE2BE9AC1D00D9001C /* QrSwapView.swift */; };
+		D038BAC12BE9F3B800D9001C /* QrConfirmSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC02BE9F3B800D9001C /* QrConfirmSwapView.swift */; };
+		D038BAC32BE9F48700D9001C /* QrWaitingPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC22BE9F48700D9001C /* QrWaitingPaymentView.swift */; };
+		D038BAC52BEA30EA00D9001C /* CrossChainQrSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC42BEA30EA00D9001C /* CrossChainQrSwap.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
@@ -119,6 +123,10 @@
 		D038BAB72BE98CC600D9001C /* SwapScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapScanner.swift; sourceTree = "<group>"; };
 		D038BABA2BE9A19000D9001C /* QrSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrSendView.swift; sourceTree = "<group>"; };
 		D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCardQRView.swift; sourceTree = "<group>"; };
+		D038BABE2BE9AC1D00D9001C /* QrSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrSwapView.swift; sourceTree = "<group>"; };
+		D038BAC02BE9F3B800D9001C /* QrConfirmSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrConfirmSwapView.swift; sourceTree = "<group>"; };
+		D038BAC22BE9F48700D9001C /* QrWaitingPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrWaitingPaymentView.swift; sourceTree = "<group>"; };
+		D038BAC42BEA30EA00D9001C /* CrossChainQrSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossChainQrSwap.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -286,10 +294,7 @@
 		D0168F762BB4044100F330F8 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
-				D0168F742BB403CA00F330F8 /* RecentCoin.swift */,
-				D0168F772BB40BB700F330F8 /* SentView.swift */,
-				D0168F792BB40C4000F330F8 /* SwappedView.swift */,
-				D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */,
+				D038BAC62BEA453200D9001C /* MainWalletDetails */,
 				D038BAB92BE99B2A00D9001C /* ForthSection */,
 				D038BAAE2BE8FD7A00D9001C /* ThirdSection */,
 				D08F55262BE53D3D00E3F933 /* SecondSection */,
@@ -331,8 +336,23 @@
 			children = (
 				D038BABA2BE9A19000D9001C /* QrSendView.swift */,
 				D038BABC2BE9A5AE00D9001C /* BuyCardQRView.swift */,
+				D038BABE2BE9AC1D00D9001C /* QrSwapView.swift */,
+				D038BAC02BE9F3B800D9001C /* QrConfirmSwapView.swift */,
+				D038BAC22BE9F48700D9001C /* QrWaitingPaymentView.swift */,
+				D038BAC42BEA30EA00D9001C /* CrossChainQrSwap.swift */,
 			);
 			path = ForthSection;
+			sourceTree = "<group>";
+		};
+		D038BAC62BEA453200D9001C /* MainWalletDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0168F772BB40BB700F330F8 /* SentView.swift */,
+				D0168F7B2BB40CDB00F330F8 /* RecivedNfT.swift */,
+				D0168F792BB40C4000F330F8 /* SwappedView.swift */,
+				D0168F742BB403CA00F330F8 /* RecentCoin.swift */,
+			);
+			path = MainWalletDetails;
 			sourceTree = "<group>";
 		};
 		D08F55232BE51FF600E3F933 /* Manager */ = {
@@ -455,11 +475,13 @@
 				D038BAAA2BE8F8BB00D9001C /* SellBuyModel.swift in Sources */,
 				D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */,
 				D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */,
+				D038BABF2BE9AC1D00D9001C /* QrSwapView.swift in Sources */,
 				D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */,
 				D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */,
 				D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */,
 				D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */,
 				D038BAAD2BE8FCE800D9001C /* BuySellViewModel.swift in Sources */,
+				D038BAC52BEA30EA00D9001C /* CrossChainQrSwap.swift in Sources */,
 				D038BAB22BE94A1700D9001C /* SwapViewPassword.swift in Sources */,
 				D038BAB42BE94AE000D9001C /* YouBuySwapView.swift in Sources */,
 				D0168F752BB403CA00F330F8 /* RecentCoin.swift in Sources */,
@@ -481,6 +503,7 @@
 				D0168F6D2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift in Sources */,
 				D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */,
 				D038BAB02BE8FDDA00D9001C /* SwapView.swift in Sources */,
+				D038BAC32BE9F48700D9001C /* QrWaitingPaymentView.swift in Sources */,
 				D0168F462BAEC24300F330F8 /* OtpStackViewController.swift in Sources */,
 				D08F552D2BE617C500E3F933 /* SearchCoinCell.swift in Sources */,
 				D0168F4E2BAEF56D00F330F8 /* WalletViewController.swift in Sources */,
@@ -489,6 +512,7 @@
 				D0168EF22BACD08100F330F8 /* AppDelegate.swift in Sources */,
 				D0168F5F2BB292C500F330F8 /* ActionButtonsCollectionViewCell.swift in Sources */,
 				D0168F7A2BB40C4000F330F8 /* SwappedView.swift in Sources */,
+				D038BAC12BE9F3B800D9001C /* QrConfirmSwapView.swift in Sources */,
 				D0168F672BB36CCE00F330F8 /* SecondCollectionViewCell.swift in Sources */,
 				D0168F372BAE0D2D00F330F8 /* TonWalletColor.swift in Sources */,
 				D0168EF42BACD08100F330F8 /* SceneDelegate.swift in Sources */,

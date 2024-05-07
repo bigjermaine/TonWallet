@@ -26,7 +26,7 @@ class TransactionCustomButton:UIButton{
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "rrrrrr"
+        label.text = ""
         return label
     }()
     
@@ -60,6 +60,7 @@ class TransactionCustomButton:UIButton{
         let color = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
         backgroundColor = color
         layer.cornerRadius = 12
+       clipsToBounds = false
     }
     
     required init?(coder: NSCoder) {

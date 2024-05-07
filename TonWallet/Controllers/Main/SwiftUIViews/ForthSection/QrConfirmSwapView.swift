@@ -1,23 +1,23 @@
 //
-//  SwapViewPassword.swift
+//  QrConfirmSwapView.swift
 //  TonWallet
 //
-//  Created by MacBook AIR on 06/05/2024.
+//  Created by MacBook AIR on 07/05/2024.
 //
 
 import SwiftUI
 
-struct SwapViewPassword: View {
+struct QrConfirmSwapView: View {
     @State private var enteredNumbers: [String] = Array(repeating: "", count: 4)
     @State private var password: String = ""
-    @Binding  var path: [SwapRoutes]
+    @Binding  var path: [QRRoutes]
     var body: some View {
         VStack(spacing: 10) {
             VStack(spacing: 10) {
                 VStack{
                     Text("Confirm Swap")
                         .font(.system(size: 20))
-                    Text("123.4 TON to 86.47008 MINI")
+                    Text("100 USDT to 25 TON")
                         .foregroundStyle(.gray)
                 }
                   
@@ -71,11 +71,11 @@ struct SwapViewPassword: View {
               Spacer()
                }
          .navigationBarBackButtonHidden(true)
-         .toolbar {
+        .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button{
                     HapticManager.shared.vibrate(for: .success)
-                    path.removeAll()
+                    path.removeLast()
                 }label: {
                     Image("CloseButton")
                 }
@@ -86,7 +86,7 @@ struct SwapViewPassword: View {
            .onChange(of: password) { x in
                if password.count ==  4 {
                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-                     //  path.append(.SendDisplayCoinView)
+                      path.append(.sellAsset)
                    }
                 
                }
@@ -111,12 +111,12 @@ struct SwapViewPassword: View {
     
     func scan() {
         HapticManager.shared.vibrate(for: .warning)
-        path.append(.Scan)
+      //  path.append(.Scan)
        
     }
-}
+    }
+
 
 #Preview {
-    SwapViewPassword( path: .constant([.confirmSwap]))
+    QrConfirmSwapView(path: .constant([.Scan]))
 }
-  

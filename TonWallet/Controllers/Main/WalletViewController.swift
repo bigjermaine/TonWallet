@@ -435,8 +435,7 @@ extension WalletViewController {
     }
     
     func didTapEarn() {
-        let vc = UIHostingController(rootView:  SwapView())
-        present(vc, animated: true)
+      
       
     }
     
@@ -452,16 +451,21 @@ extension WalletViewController {
             
             let buyWithCardAction = UIAlertAction(title: "Buy with Card", style: .default) { _ in
                 // Handle Buy with Card action
+                let vc = UIHostingController(rootView:   QrSendView())
+                self.present(vc, animated: true)
+               
             }
             actionSheet.addAction(buyWithCardAction)
             
             let buyWithCryptoAction = UIAlertAction(title: "Buy with Crypto", style: .default) { _ in
-                // Handle Buy with Crypto action
+//                let vc = UIHostingController(rootView:   BuyCardQRView(, path: <#Binding<[QRRoutes]>#>))
+//                self.present(vc, animated: true)
             }
             actionSheet.addAction(buyWithCryptoAction)
             
             let receiveQRInvoiceAction = UIAlertAction(title: "Receive with QR or Invoice", style: .default) { _ in
-                // Handle Receive with QR or Invoice action
+                let vc = UIHostingController(rootView:   CrossChainQrSwap())
+                self.present(vc, animated: true)
             }
             actionSheet.addAction(receiveQRInvoiceAction)
             
