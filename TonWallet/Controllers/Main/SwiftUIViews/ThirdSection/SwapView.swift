@@ -14,7 +14,7 @@ struct SwapView: View {
     @State var tonBalanceCheck:String = "Enter Amounts"
     @State var continueBackgroundColor:Color = .blue.opacity(0.3)
     @Environment(\.dismiss) var dismiss
-    @State var shown = false
+    @State var shown = true
     @State var isSuccess = false
     @State var message = ""
     @State var c: AlertAction?
@@ -292,7 +292,7 @@ struct AlertView: View {
      var body: some View {
          VStack {
              Image("questionImageIcon")
-                 .padding(.top,2)
+                 .padding(.top,5)
              Text("Price Impact")
                  .foregroundColor(Color.black)
                  .bold()
@@ -313,7 +313,7 @@ struct AlertView: View {
                     shown.toggle()
                 }
                 .foregroundColor(.blue)
-                .padding(.top,10)
+                .padding(.top,5)
              
          }.frame(width: 270, height: 253)
          
@@ -330,3 +330,50 @@ enum AlertAction {
     case others
 }
 
+
+struct AlertView2: View {
+     
+     @Binding var shown: Bool
+     @Binding var closureA: AlertAction?
+     var isSuccess: Bool
+     var message: String
+     
+     var body: some View {
+         VStack(spacing:8){
+             VStack(spacing:5){
+                 Image("questionImageIcon")
+                     .padding(.top,8)
+                 Text("Why Staking is Safe")
+                     .foregroundColor(Color.black)
+                     .bold()
+                    
+             }
+             VStack(alignment: .leading, spacing:20){
+                 Text("1. Staking is fully decentralized and operated by the official TON Liquid Staking smart contracts.")
+                     .multilineTextAlignment(.leading)
+                     .font(.system(size: 13))
+                 Text("2. The deposited stake will be used for the TON network validation as part of its proof-of-stake essence. ")
+                     .multilineTextAlignment(.leading)
+                     .font(.system(size: 13))
+                 Text("3. You can withdraw your stake at any time and it will be deposited back to your account within two days. ")
+                     .multilineTextAlignment(.leading)
+                     .font(.system(size: 13))
+             }
+             .padding()
+            Divider()
+             
+             Button("OK") {
+                    closureA = .cancel
+                    shown.toggle()
+                }
+                .foregroundColor(.blue)
+                .padding(.top,10)
+             
+         }.frame(width: 280, height: 380)
+         
+         .background(Color.white)
+         .cornerRadius(12)
+         .clipped()
+         
+     }
+ }

@@ -10,6 +10,7 @@ import SwiftUI
 struct QrSendView: View {
     @State  var path: [QRRoutes] = []
     @Environment(\.dismiss) var dismiss
+    @State private var isCopied: Bool = false
     var body: some View {
         NavigationStack(path: $path){
             ZStack{
@@ -37,24 +38,27 @@ struct QrSendView: View {
                             VStack{
                                 Image("QR Code")
                                     .resizable()
+                                    .frame(width: 252,height: 252)
+                                   
                                 Text("UQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqEBI")
                                     .multilineTextAlignment(.center)
                                     .frame(width: 252)
                                 
                                 HStack{
                                     Button{
-                                        
+                                        let address = "Your address here"
+                                        UIPasteboard.general.string = address
+                                        isCopied = true
                                     }label: {
                                         Text("Copy Address")
                                             .foregroundStyle(.blue)
                                     }
                                     Spacer()
-                                    Button{
-                                        
-                                    }label: {
-                                        Text("Share QR Code")
+                                    ShareLink(item: URL(string: "www.google.com")!) {
+                                        Label("Share QR Code", systemImage: "")
                                             .foregroundStyle(.blue)
                                     }
+                                   
                                 }
                                 .padding()
                                 .padding(.bottom,50)
@@ -63,7 +67,7 @@ struct QrSendView: View {
                         
                         Section(header: Text("Buy Crypto")){
                             Button{
-                             
+                                path.append(.Buy)
                             }label: {
                                 HStack{
                                     Image("cardImage")
@@ -90,7 +94,11 @@ struct QrSendView: View {
                         }
                     }
                 }
+                
             }
+            .alert("Copied To ClipBoard", isPresented: $isCopied) {
+                    
+                   }
             .navigationDestination(for: QRRoutes.self) { route in
                 switch route {
                 case.Buy:

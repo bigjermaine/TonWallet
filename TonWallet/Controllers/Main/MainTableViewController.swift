@@ -8,23 +8,45 @@
 import UIKit
 
 class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
-    var reportButton: UIButton?
+    let Vc1 =  WalletViewController()
+    let Vc2 =  AssetsViewController()
+    let Vc3 =  BrowseViewController()
+    let Vc4 =  SettingsViewController()
+    
+    private let reportButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        let image = UIImage(systemName: "square.and.arrow.up.circle")?.withRenderingMode(.alwaysOriginal).withTintColor(.red, renderingMode: .alwaysOriginal)
+        image?.withTintColor(.red)
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+       
+        
+        return button
+    }()
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         configureSetupTabbarViewController()
         configureTabbar()
-        presentMenu()
         self.delegate = self
+        reportButton.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(reportButton, aboveSubview:tabBar)
+        reportButton.rightAnchor.constraint(equalTo: tabBar.rightAnchor,constant: -40).isActive = true
+        reportButton.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor,constant: -10).isActive = true
+        reportButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        reportButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        presentMenu()
     }
     
    
     func configureSetupTabbarViewController() {
-        let Vc1 =  WalletViewController()
-        let Vc2 =  AssetsViewController()
-        let Vc3 =  BrowseViewController()
-        let Vc4 =  SettingsViewController()
+     
         
         
         Vc1.navigationItem.largeTitleDisplayMode = .never
@@ -46,36 +68,41 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
         nav1.navigationBar.backgroundColor = .clear
         nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
         nav1.navigationBar.shadowImage = UIImage()
-        
-        
-        let tapmeitems = UIMenu(title: "", options: .displayInline, children: [
-            UIAction(title: "Like", image: UIImage(named: "sharelike"), handler: {[weak self] _ in
-                
-            }),
-            UIAction(title: "Dowload", image: UIImage(named: "sharedowload2"), handler: {[weak self] _ in
-                
-            }),
-            UIAction(title: "Comment", image: UIImage(named: "sharecomment"), handler: {[weak self] _ in
-                
-            }),
-            UIAction(title: "Share", image: UIImage(named: "shareshare"), handler: {[weak self] _ in
-                
-            }),
-        ])
-        
-       let menu = UIMenu(title: "", children: [tapmeitems])
-      setViewControllers([nav1,nav2,nav3,nav4], animated: false)
+        setViewControllers([nav1,nav2,nav3,nav4], animated: false)
     
+    }
+   
+    func   presentMenu() {
+         let tapmeitems = UIMenu(title: "", options: .displayInline, children: [
+            UIAction(title: "Like", image: UIImage(named: "sharelike"), handler: {[weak self] _ in
+               print("")
+            }),
+        UIAction(title: "Dowload", image: UIImage(named: "sharedowload2"), handler: {[weak self] _ in
+            print("")
+        }),
+            UIAction(title: "Comment", image: UIImage(named: "sharecomment"), handler: {[weak self] _ in
+                print("")
+        }),
+            UIAction(title: "Share", image: UIImage(named: "shareshare"), handler: {[weak self] _ in
+                print("")
+        }),
+        ])
+        let menu = UIMenu(title: "", children: [tapmeitems])
+        reportButton.menu = menu
+        reportButton.showsMenuAsPrimaryAction = true
+       
+        
+        
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == 3 {
-            presentMenu()
-        }
+        reportButton.isContextMenuInteractionEnabled  = true
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected view controller")
+        reportButton.isContextMenuInteractionEnabled  = true
+  
+    
     }
     func configureTabbar() {
         if #available(iOS 13.0, *) {
@@ -91,8 +118,5 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     
-    func  presentMenu() {
-       
-    }
     
 }

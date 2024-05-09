@@ -47,7 +47,7 @@ struct CrossChainQrSwap: View {
                     HStack {
                         Text("Swap")
                             .font(.headline)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     }
                     
                     

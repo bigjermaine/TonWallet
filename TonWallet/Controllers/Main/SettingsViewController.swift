@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
 
         view.backgroundColor = .white
         
-        presentMenu()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,24 +22,6 @@ class SettingsViewController: UIViewController {
      
     }
 
-    func  presentMenu() {
-         let tapmeitems = UIMenu(title: "", options: .displayInline, children: [
-            UIAction(title: "Like", image: UIImage(named: "sharelike"), handler: {[weak self] _ in
-              
-            }),
-        UIAction(title: "Dowload", image: UIImage(named: "sharedowload2"), handler: {[weak self] _ in
-          
-        }),
-            UIAction(title: "Comment", image: UIImage(named: "sharecomment"), handler: {[weak self] _ in
-            
-        }),
-            UIAction(title: "Share", image: UIImage(named: "shareshare"), handler: {[weak self] _ in
-             
-        }),
-        ])
-        let menu = UIMenu(title: "", children: [tapmeitems])
-        reportButton?.menu = menu
-        reportButton?.showsMenuAsPrimaryAction = true
-    }
+  
     
 }

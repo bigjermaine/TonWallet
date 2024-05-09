@@ -60,10 +60,19 @@
 		D038BAC12BE9F3B800D9001C /* QrConfirmSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC02BE9F3B800D9001C /* QrConfirmSwapView.swift */; };
 		D038BAC32BE9F48700D9001C /* QrWaitingPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC22BE9F48700D9001C /* QrWaitingPaymentView.swift */; };
 		D038BAC52BEA30EA00D9001C /* CrossChainQrSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC42BEA30EA00D9001C /* CrossChainQrSwap.swift */; };
+		D038BAC92BEB8E3500D9001C /* EarnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAC82BEB8E3500D9001C /* EarnView.swift */; };
+		D038BACB2BEB9B7B00D9001C /* AddStakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BACA2BEB9B7B00D9001C /* AddStakeView.swift */; };
+		D038BACD2BEBA1B900D9001C /* ConfirmStakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BACC2BEBA1B900D9001C /* ConfirmStakeView.swift */; };
+		D038BACF2BEBA25F00D9001C /* EarnDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BACE2BEBA25F00D9001C /* EarnDetailsView.swift */; };
+		D038BAD12BEBA8A200D9001C /* StakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAD02BEBA8A200D9001C /* StakeViewModel.swift */; };
+		D038BAD32BEBA8BE00D9001C /* StakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAD22BEBA8BE00D9001C /* StakeModel.swift */; };
+		D038BAD52BEBB99800D9001C /* UnstakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAD42BEBB99800D9001C /* UnstakeView.swift */; };
+		D038BAD72BEBBADD00D9001C /* ConfirmUnstake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038BAD62BEBBADD00D9001C /* ConfirmUnstake.swift */; };
 		D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55242BE5200A00E3F933 /* HapticManager.swift */; };
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
 		D08F552D2BE617C500E3F933 /* SearchCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */; };
+		D0CBC9B52BEC6CCF00DC7815 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */; };
 		D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7902BE620C700A4AD60 /* SearchModel.swift */; };
 		D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */; };
 		D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7942BE663C800A4AD60 /* SendSpecificAmountTokenView.swift */; };
@@ -127,10 +136,19 @@
 		D038BAC02BE9F3B800D9001C /* QrConfirmSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrConfirmSwapView.swift; sourceTree = "<group>"; };
 		D038BAC22BE9F48700D9001C /* QrWaitingPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrWaitingPaymentView.swift; sourceTree = "<group>"; };
 		D038BAC42BEA30EA00D9001C /* CrossChainQrSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossChainQrSwap.swift; sourceTree = "<group>"; };
+		D038BAC82BEB8E3500D9001C /* EarnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnView.swift; sourceTree = "<group>"; };
+		D038BACA2BEB9B7B00D9001C /* AddStakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStakeView.swift; sourceTree = "<group>"; };
+		D038BACC2BEBA1B900D9001C /* ConfirmStakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmStakeView.swift; sourceTree = "<group>"; };
+		D038BACE2BEBA25F00D9001C /* EarnDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnDetailsView.swift; sourceTree = "<group>"; };
+		D038BAD02BEBA8A200D9001C /* StakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeViewModel.swift; sourceTree = "<group>"; };
+		D038BAD22BEBA8BE00D9001C /* StakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeModel.swift; sourceTree = "<group>"; };
+		D038BAD42BEBB99800D9001C /* UnstakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnstakeView.swift; sourceTree = "<group>"; };
+		D038BAD62BEBBADD00D9001C /* ConfirmUnstake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmUnstake.swift; sourceTree = "<group>"; };
 		D08F55242BE5200A00E3F933 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinCell.swift; sourceTree = "<group>"; };
+		D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D0E2D7902BE620C700A4AD60 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientAddressView.swift; sourceTree = "<group>"; };
 		D0E2D7942BE663C800A4AD60 /* SendSpecificAmountTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSpecificAmountTokenView.swift; sourceTree = "<group>"; };
@@ -269,6 +287,7 @@
 				D0168F592BB013A100F330F8 /* HomeModel.swift */,
 				D0E2D7902BE620C700A4AD60 /* SearchModel.swift */,
 				D038BAA92BE8F8BB00D9001C /* SellBuyModel.swift */,
+				D038BAD22BEBA8BE00D9001C /* StakeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +313,7 @@
 		D0168F762BB4044100F330F8 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
+				D038BAC72BEB8B4600D9001C /* FifthSection */,
 				D038BAC62BEA453200D9001C /* MainWalletDetails */,
 				D038BAB92BE99B2A00D9001C /* ForthSection */,
 				D038BAAE2BE8FD7A00D9001C /* ThirdSection */,
@@ -315,6 +335,7 @@
 			children = (
 				D038BAA22BE8ADD400D9001C /* CameraViewModel.swift */,
 				D038BAAC2BE8FCE800D9001C /* BuySellViewModel.swift */,
+				D038BAD02BEBA8A200D9001C /* StakeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +374,20 @@
 				D0168F742BB403CA00F330F8 /* RecentCoin.swift */,
 			);
 			path = MainWalletDetails;
+			sourceTree = "<group>";
+		};
+		D038BAC72BEB8B4600D9001C /* FifthSection */ = {
+			isa = PBXGroup;
+			children = (
+				D038BAC82BEB8E3500D9001C /* EarnView.swift */,
+				D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */,
+				D038BACA2BEB9B7B00D9001C /* AddStakeView.swift */,
+				D038BACC2BEBA1B900D9001C /* ConfirmStakeView.swift */,
+				D038BACE2BEBA25F00D9001C /* EarnDetailsView.swift */,
+				D038BAD42BEBB99800D9001C /* UnstakeView.swift */,
+				D038BAD62BEBBADD00D9001C /* ConfirmUnstake.swift */,
+			);
+			path = FifthSection;
 			sourceTree = "<group>";
 		};
 		D08F55232BE51FF600E3F933 /* Manager */ = {
@@ -458,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */,
+				D038BAD12BEBA8A200D9001C /* StakeViewModel.swift in Sources */,
 				D038BABB2BE9A19000D9001C /* QrSendView.swift in Sources */,
 				D038BAA32BE8ADD400D9001C /* CameraViewModel.swift in Sources */,
 				D0E2D7952BE663C800A4AD60 /* SendSpecificAmountTokenView.swift in Sources */,
@@ -465,6 +501,7 @@
 				D0168F712BB3FEA000F330F8 /* SubHeaderViewCollectionView.swift in Sources */,
 				D0168F5A2BB013A100F330F8 /* HomeModel.swift in Sources */,
 				D0168F4C2BAEF34600F330F8 /* MainTableViewController.swift in Sources */,
+				D038BAC92BEB8E3500D9001C /* EarnView.swift in Sources */,
 				D0168F7C2BB40CDB00F330F8 /* RecivedNfT.swift in Sources */,
 				D0168F652BB345E200F330F8 /* MainCollectionViewHeader.swift in Sources */,
 				D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */,
@@ -473,11 +510,14 @@
 				D0168F482BAEC43600F330F8 /* SetPasswordViewController.swift in Sources */,
 				D038BA9F2BE770FF00D9001C /* SendDisplayCoinView.swift in Sources */,
 				D038BAAA2BE8F8BB00D9001C /* SellBuyModel.swift in Sources */,
+				D038BACD2BEBA1B900D9001C /* ConfirmStakeView.swift in Sources */,
 				D0168F412BAEBDCB00F330F8 /* WalletCreatedViewController.swift in Sources */,
 				D038BAA82BE8AE9C00D9001C /* CameraView.swift in Sources */,
 				D038BABF2BE9AC1D00D9001C /* QrSwapView.swift in Sources */,
 				D038BAB82BE98CC600D9001C /* SwapScanner.swift in Sources */,
 				D0168F6B2BB3833900F330F8 /* SentNftCollectionViewCell.swift in Sources */,
+				D038BAD72BEBBADD00D9001C /* ConfirmUnstake.swift in Sources */,
+				D038BACF2BEBA25F00D9001C /* EarnDetailsView.swift in Sources */,
 				D0168F692BB377CC00F330F8 /* SwappedCollectionViewCell.swift in Sources */,
 				D0168F7E2BB41CAE00F330F8 /* CornerRadiusExtension.swift in Sources */,
 				D038BAAD2BE8FCE800D9001C /* BuySellViewModel.swift in Sources */,
@@ -491,7 +531,10 @@
 				D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */,
 				D038BABD2BE9A5AE00D9001C /* BuyCardQRView.swift in Sources */,
 				D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */,
+				D038BAD32BEBA8BE00D9001C /* StakeModel.swift in Sources */,
+				D038BACB2BEB9B7B00D9001C /* AddStakeView.swift in Sources */,
 				D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */,
+				D0CBC9B52BEC6CCF00DC7815 /* TestView.swift in Sources */,
 				D0168F522BAEF58A00F330F8 /* BrowseViewController.swift in Sources */,
 				D0168F312BAE071400F330F8 /* SeedPhaseViewController.swift in Sources */,
 				D0168F6F2BB3F90A00F330F8 /* CustomFooterView.swift in Sources */,
@@ -500,6 +543,7 @@
 				D0168F632BB2C63400F330F8 /* BalanceCollectionViewCell.swift in Sources */,
 				D0168F352BAE0BAE00F330F8 /* SecretWordTableViewCell.swift in Sources */,
 				D038BAA12BE8A4DD00D9001C /* QrScannerView.swift in Sources */,
+				D038BAD52BEBB99800D9001C /* UnstakeView.swift in Sources */,
 				D0168F6D2BB3EA7000F330F8 /* ReceivedNfTCollectionView.swift in Sources */,
 				D0168F502BAEF57D00F330F8 /* AssetsViewController.swift in Sources */,
 				D038BAB02BE8FDDA00D9001C /* SwapView.swift in Sources */,

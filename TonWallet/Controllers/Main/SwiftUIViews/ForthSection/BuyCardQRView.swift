@@ -48,3 +48,27 @@ struct BrowserView: UIViewRepresentable {
         // Update the view if needed
     }
 }
+
+struct BuyCardQRView2: View {
+    var url:String? =  "https://wallet.ton.org"
+    @Environment(\.dismiss) var dismiss
+    var body: some View {
+        NavigationStack{
+        ZStack{
+            BrowserView(url: URL(string:url ?? "https://tonkeeper.com/privacy")!)
+                .edgesIgnoringSafeArea(.all)
+        }
+        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button{
+                    HapticManager.shared.vibrate(for: .success)
+                 dismiss()
+                }label: {
+                    Image("CloseButton")
+                }
+            }
+        }
+        }
+    }
+}
