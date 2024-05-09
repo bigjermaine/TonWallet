@@ -47,7 +47,24 @@ class SeedPhaseViewController: UIViewController, UITableViewDelegate, UITableVie
         setDelegate()
         setupHeaderAndFooter()
         addAction()
-      
+        addBackButton()
+    }
+    
+    
+    private func addBackButton() {
+        let backButton = UIButton(type: .system)
+        backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        backButton.setTitle("Back", for: .normal)
+        backButton.tintColor = .systemBlue
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        backButton.sizeToFit()
+        let backButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backButtonItem
+    }
+
+    @objc func backButtonTapped() {
+    
+         dismiss(animated: true, completion: nil)
     }
     
     func addAction() {
