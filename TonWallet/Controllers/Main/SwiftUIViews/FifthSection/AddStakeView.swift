@@ -87,8 +87,10 @@ struct AddStakeView: View {
             checkCoinAmountColor = .red
             tonBalanceCheck = "Insufficient TON Balance"
             continueBackgroundColor = .blue.opacity(0.3)
+            HapticManager.shared.vibrate(for: .warning)
             estimatedBalance =  "Est. balance in a year ≈ 0 TON"
         }else {
+            HapticManager.shared.vibrate(for: .success)
             checkCoinAmountColor = .black
             tonBalanceCheck =  "Stake TON"
             continueBackgroundColor = .blue

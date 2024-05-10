@@ -41,7 +41,7 @@ struct SearchBar: View {
                 
                 }
                 .background(.gray.opacity(0.1))
-                .cornerRadius(12)
+                .cornerRadius(10)
             }
             if hasCancel {
                 Button(action: {
@@ -97,7 +97,7 @@ struct ScanSearchBar: View {
                     TextField(title, text: $searchText.onChange { x in
                        action()
                     })
-                    .font(.system(size: 20,weight: .regular))
+                    .font(.system(size: 16,weight: .regular))
                     .frame(height: 44)
                     .textFieldStyle(.plain)
                     .cornerRadius(12)

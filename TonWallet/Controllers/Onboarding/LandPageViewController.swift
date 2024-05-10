@@ -86,8 +86,10 @@ class LandPageViewController: UIViewController {
     }
     
   @objc func navigateToSeedPhaseController() {
-        let vc = SeedPhaseViewController()
-       navigationController?.pushViewController(vc, animated: true)
+      let vc = UINavigationController(rootViewController: SeedPhaseViewController())
+      vc.modalPresentationStyle = .fullScreen
+      vc.modalTransitionStyle = .crossDissolve
+      present(vc, animated: true)
     }
     
     @objc func navigateToWalletCreatedViewController() {

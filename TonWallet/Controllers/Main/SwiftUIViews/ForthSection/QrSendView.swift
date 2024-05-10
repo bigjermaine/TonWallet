@@ -102,7 +102,7 @@ struct QrSendView: View {
             .navigationDestination(for: QRRoutes.self) { route in
                 switch route {
                 case.Buy:
-                    BuyCardQRView(path: $path)
+                    BuyCardQRView(url:"https://ton.org/buy-toncoin?filters[exchange_groups][slug][$eq]=buy-with-card&pagination[page]=1&pagination[pageSize]=100", path: $path)
                 case.Scan:
                     QrConfirmSwapView(path: $path)
                 case.Password:

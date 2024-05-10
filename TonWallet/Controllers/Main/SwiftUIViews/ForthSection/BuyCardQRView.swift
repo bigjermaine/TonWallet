@@ -10,6 +10,7 @@ import WebKit
 struct BuyCardQRView: View {
     var url:String? =  "https://wallet.ton.org"
     @Binding  var path: [QRRoutes]
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             BrowserView(url: URL(string:url ?? "https://tonkeeper.com/privacy")!)
@@ -20,7 +21,7 @@ struct BuyCardQRView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button{
                     HapticManager.shared.vibrate(for: .success)
-                   // path.removeAll()
+                    path.removeAll()
                 }label: {
                     Image("CloseButton")
                 }
@@ -50,12 +51,12 @@ struct BrowserView: UIViewRepresentable {
 }
 
 struct BuyCardQRView2: View {
-    var url:String? =  "https://wallet.ton.org"
+    @State var url:String? =  "https://ton.org/buy-toncoin?filters[exchange_groups][slug][$eq]=buy-with-card&pagination[page]=1&pagination[pageSize]=100"
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack{
         ZStack{
-            BrowserView(url: URL(string:url ?? "https://tonkeeper.com/privacy")!)
+            BrowserView(url: URL(string:url ?? "https://ton.org/buy-toncoin?filters[exchange_groups][slug][$eq]=buy-with-card&pagination[page]=1&pagination[pageSize]=100")!)
                 .edgesIgnoringSafeArea(.all)
         }
         

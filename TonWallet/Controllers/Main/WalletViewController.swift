@@ -18,7 +18,7 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
     }()
     
     lazy var adjustButtonLeftButtonItem: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(named: "Settings")?.withRenderingMode(.alwaysOriginal), style:.plain, target: self, action:#selector(inboxTapped))
+        let button = UIBarButtonItem(image: UIImage(named: "Settings")?.withRenderingMode(.alwaysOriginal), style:.plain, target: self, action:nil)
         return button
    }()
     
@@ -74,7 +74,8 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
         HapticManager.shared.vibrateForSelection()
     }
     @objc func inboxTapped() {
-        
+        let vc = UIHostingController(rootView:ScannerView2())
+        present(vc, animated: true)
     }
     
     func setupNavBar() {
@@ -182,7 +183,7 @@ extension WalletViewController {
             }else if viewModel[indexPath.row].sentNFTImage != "" {
                 let vc = UIHostingController(rootView:RecivedNfT())
                 present(vc, animated: true)
-            } else{
+            } else if viewModel[indexPath.row].sentNFTImage != ""{
                     let vc = UIHostingController(rootView:RecivedNfT())
                     present(vc, animated: true)
             }
@@ -224,6 +225,12 @@ extension WalletViewController {
         
             return cell
         case .second(let viewModel):
+            guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:ReceivedNfTCollectionViewCell.identifier, for: indexPath) as? ReceivedNfTCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            cell.configure(viewModel: viewModel[indexPath.row])
+          
             
             if viewModel[indexPath.row].exchangedCoin != "" {
                 guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:SwappedCollectionViewCell.identifier, for: indexPath) as? SwappedCollectionViewCell else {
@@ -249,7 +256,7 @@ extension WalletViewController {
                 
                 cell.configure(viewModel: viewModel[indexPath.row])
                 return cell
-            } else  {
+            } else if viewModel[indexPath.row].senfNFTCategpries != "" {
                     
                     guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:ReceivedNfTCollectionViewCell.identifier, for: indexPath) as? ReceivedNfTCollectionViewCell else {
                         return UICollectionViewCell()
@@ -260,6 +267,7 @@ extension WalletViewController {
                 
                 
             }
+            return cell
         case .button(_):
             guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:ActionButtonsCollectionViewCell.identifier, for: indexPath) as? ActionButtonsCollectionViewCell else {
                 return UICollectionViewCell()
@@ -453,7 +461,7 @@ extension WalletViewController {
             
             let buyWithCardAction = UIAlertAction(title: "Buy with Card", style: .default) { _ in
                 // Handle Buy with Card action
-                let vc = UIHostingController(rootView:  BuyCardQRView2())
+                let vc = UIHostingController(rootView:  BuyCardQRView2(url: "https://ton.org/buy-toncoin?filters[exchange_groups][slug][$eq]=buy-with-card&pagination[page]=1&pagination[pageSize]=100"))
                 self.present(vc, animated: true)
                
                

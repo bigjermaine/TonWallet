@@ -34,13 +34,8 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
         configureSetupTabbarViewController()
         configureTabbar()
         self.delegate = self
-        reportButton.translatesAutoresizingMaskIntoConstraints = false
-        view.insertSubview(reportButton, aboveSubview:tabBar)
-        reportButton.rightAnchor.constraint(equalTo: tabBar.rightAnchor,constant: 0).isActive = true
-        reportButton.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor,constant: -10).isActive = true
-        reportButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        reportButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         presentMenu()
+        reportButtonConfiguration()
     }
     
    
@@ -72,6 +67,15 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
         
 
     
+    }
+    
+    func reportButtonConfiguration() {
+        reportButton.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(reportButton, aboveSubview:tabBar)
+        reportButton.rightAnchor.constraint(equalTo: tabBar.rightAnchor,constant: 0).isActive = true
+        reportButton.centerYAnchor.constraint(equalTo: tabBar.centerYAnchor,constant: -10).isActive = true
+        reportButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        reportButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
     }
    
     func   presentMenu() {
@@ -120,8 +124,8 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
                 let vc = UINavigationController(rootViewController: SeedPhaseViewController())
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true) {
-                    self.dismissBlurView()
+                self.present(vc, animated: true) {[weak self] in
+                    self?.dismissBlurView()
                 }
             }
             actionSheet.addAction(buyWithCryptoAction)
@@ -150,7 +154,10 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
         @objc func dismissBlurView() {
             for subview in view.subviews {
                 if let blurView = subview as? UIVisualEffectView {
-                    blurView.removeFromSuperview()
+                    DispatchQueue.main.async {
+                        blurView.removeFromSuperview()
+                    }
+                   
                 }
             }
         }

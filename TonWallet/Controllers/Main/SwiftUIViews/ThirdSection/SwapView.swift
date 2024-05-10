@@ -78,11 +78,12 @@ struct SwapView: View {
             checkCoinAmountColor = .red
             tonBalanceCheck = "Insufficient TON Balance"
             continueBackgroundColor = .blue.opacity(0.3)
+            HapticManager.shared.vibrate(for: .success)
         }else {
             checkCoinAmountColor = .black
             tonBalanceCheck =  "Swap TON to MINI"
             continueBackgroundColor = .blue
-            
+            HapticManager.shared.vibrate(for: .error)
         }
     }
 }
@@ -127,7 +128,7 @@ extension SwapView {
             }
             .frame(maxWidth: .infinity, maxHeight: 50)
             .background(continueBackgroundColor)
-            .cornerRadius(16)
+            .cornerRadius(12)
             .padding(.top,15)
             .padding()
             
@@ -241,9 +242,7 @@ extension SwapView {
             Button{
                 text = ""
             }label: {
-                Image(systemName: "goforward")
-                    .resizable()
-                    .frame(width: 25,height: 25)
+                Image("X")
                     .padding(.leading,26)
                 
             }

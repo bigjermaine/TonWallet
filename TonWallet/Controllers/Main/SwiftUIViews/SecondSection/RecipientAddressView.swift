@@ -20,7 +20,7 @@ struct RecipientAddressView: View {
         }
     }
     var body: some View {
-        VStack(alignment:.leading){
+        VStack(alignment:.leading,spacing: 0){
             ScanSearchBar(searchText:$searchText,hasCancel: true) {
                 
             } onCancel: {
@@ -28,9 +28,9 @@ struct RecipientAddressView: View {
                 path.append(.QrScanner)
             }
             Text("Recent")
-                .font(.title3)
+                .font(.system(size: 20))
                 .bold()
-                .padding()
+                .padding([.horizontal,.top])
                 .padding(.leading,5)
                 
             List {

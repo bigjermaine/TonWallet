@@ -146,10 +146,11 @@ struct NumberButton: View {
                     Text(number)
                         .font(.title)
                         .foregroundColor(.black)
-                        
-                    Text(letters)
-                        .foregroundColor(.black)
-                        .font(.caption)
+                    if number != "0" {
+                        Text(letters)
+                            .foregroundColor(.black)
+                            .font(.caption)
+                    }
                 }
                 .frame(width: 70, height: 70)
                 .background(Color.gray.opacity(0.3))

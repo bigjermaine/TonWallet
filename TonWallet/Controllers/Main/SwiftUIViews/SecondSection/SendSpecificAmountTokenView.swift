@@ -50,7 +50,7 @@ struct SendSpecificAmountTokenView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: 50)
             .background(continueBackgroundColor)
-            .cornerRadius(16)
+            .cornerRadius(12)
             .padding(.top,15)
             Spacer()
             Spacer()
@@ -84,10 +84,12 @@ struct SendSpecificAmountTokenView: View {
             checkCoinAmountColor = .red
             tonBalanceCheck = "Insufficient TON Balance"
             continueBackgroundColor = .blue.opacity(0.3)
+            HapticManager.shared.vibrate(for: .error)
         }else {
             checkCoinAmountColor = .black
             tonBalanceCheck =  "Continue"
             continueBackgroundColor = .blue
+            HapticManager.shared.vibrate(for: .success)
             
         }
     }
@@ -107,7 +109,7 @@ extension SendSpecificAmountTokenView {
                 Text("Toncoin")
                     .bold()
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 17))
+                    .font(.system(size: 16))
                 Text("\(coinAmount) TON")
                     .font(.system(size: 13))
                     .foregroundStyle(.gray)

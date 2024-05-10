@@ -41,7 +41,7 @@ struct SendTonFillDescriptionView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 50)
                 .background(.blue)
-                .cornerRadius(16)
+                .cornerRadius(12)
                 .padding(.top,15)
                 .padding()
             }

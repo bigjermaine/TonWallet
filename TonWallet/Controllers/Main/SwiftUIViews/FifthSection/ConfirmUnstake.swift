@@ -164,3 +164,41 @@ struct ScannerView1: View {
     }
     
 }
+
+
+
+struct ScannerView2: View {
+    
+    
+    @State private var vm: CameraViewModel = CameraViewModel()
+    @Environment(\.scenePhase) private var scenePhase
+    var body: some View {
+        QRScannerView()
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button{
+                        HapticManager.shared.vibrate(for: .success)
+                        
+                    }label: {
+                        Image("darkCloseButton")
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("Scan QR Code")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+        
+            .environmentObject(vm)
+        
+        
+    }
+    
+}

@@ -73,7 +73,7 @@ struct QrSwapView: View {
                 Button{
                     dismiss()
                 }label: {
-                    Image(systemName: "goforward")
+                    Image("X")
                         .frame(width: 20,height: 20)
                         .padding(.leading,26)
                         
