@@ -34,6 +34,7 @@ struct SendTonFillDescriptionView: View {
                 }
                 
                 Button{
+                    HapticManager.shared.vibrateForSelection()
                     path.append(.SendTonPasswordView)
                 }label: {
                     Text("Send TON")

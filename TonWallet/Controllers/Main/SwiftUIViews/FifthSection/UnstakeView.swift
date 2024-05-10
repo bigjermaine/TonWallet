@@ -43,6 +43,7 @@ struct UnstakeView: View {
             Spacer()
             Spacer()
             Button{
+                HapticManager.shared.vibrateForSelection()
                 path.append(.confirmUnstakePassword)
             }label: {
                 Text(tonBalanceCheck)

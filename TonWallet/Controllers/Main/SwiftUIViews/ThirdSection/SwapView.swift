@@ -79,6 +79,14 @@ struct SwapView: View {
             tonBalanceCheck = "Insufficient TON Balance"
             continueBackgroundColor = .blue.opacity(0.3)
             HapticManager.shared.vibrate(for: .success)
+            
+        } else if x1 < 0 {
+            
+            tonBalanceCheck =  "Enter Amounts"
+            continueBackgroundColor = .blue.opacity(0.3)
+            HapticManager.shared.vibrate(for: .success)
+        
+            
         }else {
             checkCoinAmountColor = .black
             tonBalanceCheck =  "Swap TON to MINI"
@@ -119,7 +127,7 @@ extension SwapView {
                 
             }
             Button{
-                
+                HapticManager.shared.vibrateForSelection()
                 path.append(.confirmSwap)
                 
             }label: {

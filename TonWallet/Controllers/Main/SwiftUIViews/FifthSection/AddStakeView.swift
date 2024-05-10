@@ -42,6 +42,7 @@ struct AddStakeView: View {
             Spacer()
             Spacer()
             Button{
+                HapticManager.shared.vibrateForSelection()
                 path.append(.confirmPassword)
             }label: {
                 Text(tonBalanceCheck)
@@ -49,7 +50,7 @@ struct AddStakeView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: 50)
             .background(continueBackgroundColor)
-            .cornerRadius(16)
+            .cornerRadius(12)
             .padding(.top,15)
         }
         .padding()
@@ -89,13 +90,16 @@ struct AddStakeView: View {
             continueBackgroundColor = .blue.opacity(0.3)
             HapticManager.shared.vibrate(for: .warning)
             estimatedBalance =  "Est. balance in a year ≈ 0 TON"
-        }else {
+            
+            estimatedBalance = "Est. balance in a year ≈ 8 910 TON"
+            
+        }else if x1 > 0 {
+            
+        }else  {
             HapticManager.shared.vibrate(for: .success)
             checkCoinAmountColor = .black
             tonBalanceCheck =  "Stake TON"
             continueBackgroundColor = .blue
-            estimatedBalance = "Est. balance in a year ≈ 8 910 TON"
-            
         }
     }
 }

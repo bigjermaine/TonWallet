@@ -34,7 +34,7 @@ struct EarnView: View {
                         .foregroundStyle(.gray)
                     
                     Button{
-                       
+                        HapticManager.shared.vibrateForSelection()
                         path.append(.addStake)
                         
                     }label: {

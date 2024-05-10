@@ -33,16 +33,25 @@ struct QrSendView: View {
                     
                 }
                 .padding()
-                    List{
-                        Section(header: Text("Your TON Address")){
+                    HStack{
+                        Text("Your TON Address")
+                            .font(.system(size: 13))
+                            .bold()
+                            .padding(.leading,30)
+                            .foregroundStyle(.gray)
+                        Spacer()
+                    }
+                    VStack{
+                      
                             VStack{
                                 Image("QR Code")
                                     .resizable()
                                     .frame(width: 252,height: 252)
-                                   
+                                
                                 Text("UQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqEBI")
                                     .multilineTextAlignment(.center)
-                                    .frame(width: 252)
+                                    
+                                    .frame(width: 252,height: 50)
                                 
                                 HStack{
                                     Button{
@@ -52,18 +61,34 @@ struct QrSendView: View {
                                     }label: {
                                         Text("Copy Address")
                                             .foregroundStyle(.blue)
+                                            .bold()
                                     }
+                                    .frame(width: 120,height:10)
                                     Spacer()
-                                    ShareLink(item: URL(string: "www.google.com")!) {
+                                    ShareLink(item: URL(string: "UQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqEBI")!) {
                                         Label("Share QR Code", systemImage: "")
                                             .foregroundStyle(.blue)
+                                            .bold()
                                     }
-                                   
+                                    
                                 }
                                 .padding()
-                                .padding(.bottom,50)
-                            }
+                                
+                               
+                            
                         }
+                            .padding()
+                        
+                    }
+                    
+                    
+                    .background(Color.white)
+                    .cornerRadius(12, corners: .allCorners)
+                    .padding([.horizontal,.bottom])
+                    .padding(.bottom,10)
+                 
+                    List{
+                       
                         
                         Section(header: Text("Buy Crypto")){
                             Button{

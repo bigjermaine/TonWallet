@@ -200,14 +200,14 @@ extension QrSwapView {
                   .multilineTextAlignment(.leading)
               
           
-                Button(action: {
-                    // Action when Terms of Use button is clicked
-                }) {
-                    Text(" terms of use")
+                NavigationLink(destination: BrowserView(url: URL(string: "https://tonkeeper.com/terms")!)) {
+                    Text("terms of use")
                         .foregroundColor(.blue)
-                      
                         .font(.system(size: 13))
+                        
                 }
+              
+                
                 
                 Text(" and ")
                     .font(.system(size: 13))

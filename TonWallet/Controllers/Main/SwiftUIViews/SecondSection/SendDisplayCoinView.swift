@@ -33,6 +33,7 @@ struct SendDisplayCoinView: View {
                 .foregroundStyle(.blue)
             Spacer()
             Button{
+                HapticManager.shared.vibrateForSelection()
                 path.removeAll()
             }label: {
                 Text("Close")

@@ -41,7 +41,7 @@ struct SendSpecificAmountTokenView: View {
             }
            
             Button{
-               
+                 HapticManager.shared.vibrateForSelection()
                     path.append(.SendTonFillDescriptionView)
                 
             }label: {
