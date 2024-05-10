@@ -368,13 +368,16 @@ struct AlertView2: View {
              }
              .padding()
             Divider()
-             
-             Button("OK") {
-                    closureA = .cancel
-                    shown.toggle()
-                }
-                .foregroundColor(.blue)
-                .padding(.top,10)
+             HStack{
+                 Button("OK") {
+                     closureA = .cancel
+                     shown.toggle()
+                 }
+                 .foregroundColor(.blue)
+                 .padding(.top,8)
+             }
+                .frame(width: 280)
+            
              
          }.frame(width: 280, height: 380)
          
