@@ -77,6 +77,7 @@ class WalletCreatedViewController: UIViewController {
         addSubview()
         configureConstraints()
         configureAction()
+        walletCreationImageView.image = UIImage.gifImageWithName("congratulations")
     }
     
     

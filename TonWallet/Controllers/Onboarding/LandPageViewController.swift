@@ -72,10 +72,12 @@ class LandPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        homeImageView.image = UIImage.gifImageWithName("unboarding")
         configureBackground()
         addSubview()
         configureConstraints()
         configureAction()
+      
     }
     
     

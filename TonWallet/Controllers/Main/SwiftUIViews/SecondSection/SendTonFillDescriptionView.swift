@@ -47,7 +47,7 @@ struct SendTonFillDescriptionView: View {
                 .padding()
             }
         }
-        .navigationTitle("Send TON")
+        .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button{
@@ -55,6 +55,18 @@ struct SendTonFillDescriptionView: View {
                     path.removeAll()
                 }label: {
                     Image("CloseButton")
+                }
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button{
+                    HapticManager.shared.vibrate(for: .success)
+                    path.removeLast()
+                }label: {
+                    HStack{
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .foregroundColor(.blue)
                 }
             }
         }

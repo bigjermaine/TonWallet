@@ -18,7 +18,8 @@ struct EarnView: View {
     var body: some View {
         NavigationStack(path:$path){
             ZStack{
-                Color.lightWhite.ignoresSafeArea()
+                Color.black.opacity(shown ? 0.2 : 0)
+                    .ignoresSafeArea()
                 VStack{
                     HStack{
                         Text("0")
@@ -47,10 +48,11 @@ struct EarnView: View {
                     .padding(.top,15)
                     .padding()
                     Spacer()
-                    VStack(spacing:20){
-                        Image("earnAnimateIcon")
+                    VStack(spacing:10){
+                        GifImage("checking")
+                            .frame(width: 200,height: 200)
                         Text("Earn from your tokens while holding them")
-                            .frame(width: 200)
+                            .frame(width: 200,height: 50)
                             .multilineTextAlignment(.center)
                             .bold()
                         Text("Estimated APY 3.51%")

@@ -72,6 +72,23 @@
 		D08F55282BE53D6100E3F933 /* ChooseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */; };
 		D08F552B2BE53DE700E3F933 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552A2BE53DE700E3F933 /* SearchBar.swift */; };
 		D08F552D2BE617C500E3F933 /* SearchCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */; };
+		D09179F92BEF139700F4FE30 /* Recovery Phrase.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179EE2BEF139700F4FE30 /* Recovery Phrase.tgs */; };
+		D09179FA2BEF139700F4FE30 /* Main.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179EF2BEF139700F4FE30 /* Main.tgs */; };
+		D09179FB2BEF139700F4FE30 /* Too Bad.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F02BEF139700F4FE30 /* Too Bad.tgs */; };
+		D09179FC2BEF139700F4FE30 /* Password.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F12BEF139700F4FE30 /* Password.tgs */; };
+		D09179FD2BEF139700F4FE30 /* Created.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F22BEF139700F4FE30 /* Created.tgs */; };
+		D09179FE2BEF139700F4FE30 /* Success.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F32BEF139700F4FE30 /* Success.tgs */; };
+		D09179FF2BEF139700F4FE30 /* Waiting TON.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F42BEF139700F4FE30 /* Waiting TON.tgs */; };
+		D0917A002BEF139700F4FE30 /* Congratulations.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F52BEF139700F4FE30 /* Congratulations.tgs */; };
+		D0917A012BEF139700F4FE30 /* Start.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F62BEF139700F4FE30 /* Start.tgs */; };
+		D0917A022BEF139700F4FE30 /* Loading.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F72BEF139700F4FE30 /* Loading.tgs */; };
+		D0917A032BEF139700F4FE30 /* Test Time.tgs in Resources */ = {isa = PBXBuildFile; fileRef = D09179F82BEF139700F4FE30 /* Test Time.tgs */; };
+		D0917A052BEF154C00F4FE30 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0917A042BEF154C00F4FE30 /* Animator.swift */; };
+		D0917AA62BEF1F2F00F4FE30 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0917AA52BEF1F2F00F4FE30 /* GifView.swift */; };
+		D0917AAF2BEF2CE400F4FE30 /* unboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AAE2BEF2CE400F4FE30 /* unboarding.gif */; };
+		D0917AB12BEF2E4D00F4FE30 /* congratulations.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */; };
+		D0917AB32BEF2F0000F4FE30 /* password.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB22BEF2F0000F4FE30 /* password.gif */; };
+		D0917AB52BEF71E400F4FE30 /* checking.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB42BEF71E400F4FE30 /* checking.gif */; };
 		D0CBC9B52BEC6CCF00DC7815 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */; };
 		D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7902BE620C700A4AD60 /* SearchModel.swift */; };
 		D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */; };
@@ -148,6 +165,23 @@
 		D08F55272BE53D6100E3F933 /* ChooseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyView.swift; sourceTree = "<group>"; };
 		D08F552A2BE53DE700E3F933 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D08F552C2BE617C400E3F933 /* SearchCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinCell.swift; sourceTree = "<group>"; };
+		D09179EE2BEF139700F4FE30 /* Recovery Phrase.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Recovery Phrase.tgs"; sourceTree = "<group>"; };
+		D09179EF2BEF139700F4FE30 /* Main.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Main.tgs; sourceTree = "<group>"; };
+		D09179F02BEF139700F4FE30 /* Too Bad.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Too Bad.tgs"; sourceTree = "<group>"; };
+		D09179F12BEF139700F4FE30 /* Password.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Password.tgs; sourceTree = "<group>"; };
+		D09179F22BEF139700F4FE30 /* Created.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Created.tgs; sourceTree = "<group>"; };
+		D09179F32BEF139700F4FE30 /* Success.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Success.tgs; sourceTree = "<group>"; };
+		D09179F42BEF139700F4FE30 /* Waiting TON.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Waiting TON.tgs"; sourceTree = "<group>"; };
+		D09179F52BEF139700F4FE30 /* Congratulations.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Congratulations.tgs; sourceTree = "<group>"; };
+		D09179F62BEF139700F4FE30 /* Start.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Start.tgs; sourceTree = "<group>"; };
+		D09179F72BEF139700F4FE30 /* Loading.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = Loading.tgs; sourceTree = "<group>"; };
+		D09179F82BEF139700F4FE30 /* Test Time.tgs */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Test Time.tgs"; sourceTree = "<group>"; };
+		D0917A042BEF154C00F4FE30 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		D0917AA52BEF1F2F00F4FE30 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		D0917AAE2BEF2CE400F4FE30 /* unboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unboarding.gif; sourceTree = "<group>"; };
+		D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = congratulations.gif; sourceTree = "<group>"; };
+		D0917AB22BEF2F0000F4FE30 /* password.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = password.gif; sourceTree = "<group>"; };
+		D0917AB42BEF71E400F4FE30 /* checking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = checking.gif; sourceTree = "<group>"; };
 		D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D0E2D7902BE620C700A4AD60 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientAddressView.swift; sourceTree = "<group>"; };
@@ -186,6 +220,9 @@
 		D0168EF02BACD08100F330F8 /* TonWallet */ = {
 			isa = PBXGroup;
 			children = (
+				D0917AA72BEF1F9600F4FE30 /* GifFiles */,
+				D0917AA42BEF1EB100F4FE30 /* Gif */,
+				D09179ED2BEF139700F4FE30 /* Animations */,
 				D038BAAB2BE8FCC100D9001C /* ViewModel */,
 				D08F55232BE51FF600E3F933 /* Manager */,
 				D0168F582BB0138F00F330F8 /* Models */,
@@ -212,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				D0168F362BAE0D2D00F330F8 /* TonWalletColor.swift */,
+				D0917A042BEF154C00F4FE30 /* Animator.swift */,
 				D0168EF32BACD08100F330F8 /* SceneDelegate.swift */,
 				D0168F7D2BB41CAE00F330F8 /* CornerRadiusExtension.swift */,
 				D0168EF12BACD08100F330F8 /* AppDelegate.swift */,
@@ -422,6 +460,43 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		D09179ED2BEF139700F4FE30 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				D09179EE2BEF139700F4FE30 /* Recovery Phrase.tgs */,
+				D09179EF2BEF139700F4FE30 /* Main.tgs */,
+				D09179F02BEF139700F4FE30 /* Too Bad.tgs */,
+				D09179F12BEF139700F4FE30 /* Password.tgs */,
+				D09179F22BEF139700F4FE30 /* Created.tgs */,
+				D09179F32BEF139700F4FE30 /* Success.tgs */,
+				D09179F42BEF139700F4FE30 /* Waiting TON.tgs */,
+				D09179F52BEF139700F4FE30 /* Congratulations.tgs */,
+				D09179F62BEF139700F4FE30 /* Start.tgs */,
+				D09179F72BEF139700F4FE30 /* Loading.tgs */,
+				D09179F82BEF139700F4FE30 /* Test Time.tgs */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		D0917AA42BEF1EB100F4FE30 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				D0917AA52BEF1F2F00F4FE30 /* GifView.swift */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		D0917AA72BEF1F9600F4FE30 /* GifFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */,
+				D0917AB42BEF71E400F4FE30 /* checking.gif */,
+				D0917AB22BEF2F0000F4FE30 /* password.gif */,
+				D0917AAE2BEF2CE400F4FE30 /* unboarding.gif */,
+			);
+			path = GifFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -480,7 +555,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0917A012BEF139700F4FE30 /* Start.tgs in Resources */,
+				D09179FE2BEF139700F4FE30 /* Success.tgs in Resources */,
+				D0917A032BEF139700F4FE30 /* Test Time.tgs in Resources */,
+				D09179F92BEF139700F4FE30 /* Recovery Phrase.tgs in Resources */,
+				D09179FA2BEF139700F4FE30 /* Main.tgs in Resources */,
+				D09179FD2BEF139700F4FE30 /* Created.tgs in Resources */,
+				D0917AB52BEF71E400F4FE30 /* checking.gif in Resources */,
+				D0917A022BEF139700F4FE30 /* Loading.tgs in Resources */,
 				D0168EFE2BACD08300F330F8 /* LaunchScreen.storyboard in Resources */,
+				D09179FC2BEF139700F4FE30 /* Password.tgs in Resources */,
+				D0917AAF2BEF2CE400F4FE30 /* unboarding.gif in Resources */,
+				D0917A002BEF139700F4FE30 /* Congratulations.tgs in Resources */,
+				D09179FF2BEF139700F4FE30 /* Waiting TON.tgs in Resources */,
+				D0917AB32BEF2F0000F4FE30 /* password.gif in Resources */,
+				D09179FB2BEF139700F4FE30 /* Too Bad.tgs in Resources */,
+				D0917AB12BEF2E4D00F4FE30 /* congratulations.gif in Resources */,
 				D0168EFB2BACD08300F330F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +615,7 @@
 				D038BAB22BE94A1700D9001C /* SwapViewPassword.swift in Sources */,
 				D038BAB42BE94AE000D9001C /* YouBuySwapView.swift in Sources */,
 				D0168F752BB403CA00F330F8 /* RecentCoin.swift in Sources */,
+				D0917AA62BEF1F2F00F4FE30 /* GifView.swift in Sources */,
 				D0168F612BB297BE00F330F8 /* TransactionButtonCollectionViewCell.swift in Sources */,
 				D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */,
 				D0168F452BAEC24300F330F8 /* OtpBoxCell.swift in Sources */,
@@ -532,6 +623,7 @@
 				D038BABD2BE9A5AE00D9001C /* BuyCardQRView.swift in Sources */,
 				D08F55252BE5200A00E3F933 /* HapticManager.swift in Sources */,
 				D038BAD32BEBA8BE00D9001C /* StakeModel.swift in Sources */,
+				D0917A052BEF154C00F4FE30 /* Animator.swift in Sources */,
 				D038BACB2BEB9B7B00D9001C /* AddStakeView.swift in Sources */,
 				D0168F5D2BB08DAA00F330F8 /* FirstSectionCollectionViewCell.swift in Sources */,
 				D0CBC9B52BEC6CCF00DC7815 /* TestView.swift in Sources */,

@@ -18,7 +18,8 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
         return imageView
     }()
     
-    private let otpStackView = OTPStackView()
+    private var otpStackView = OTPStackView(numberOfFields: 4)
+    private var otpStackView1 = OTPStackView(numberOfFields: 6)
     
     
     private let setPasswordLabel : UILabel = {
@@ -57,6 +58,7 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
         return button
     }()
 
+    var check:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -64,7 +66,26 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
         addSubview()
         configureConstraints()
         otpStackView.delegate = self
+        otpStackView1.delegate = self
+        
+        setPassWordImageView.image = UIImage.gifImageWithName("password")
+        skipForNowWalletButton.addTarget(self, action: #selector(switchNumberOfOTP), for: .touchUpInside)
+        otpStackView1.layer.opacity = 0
+        
        
+    }
+    @objc func switchNumberOfOTP() {
+        check.toggle()
+        skipForNowWalletButton.setTitle( check ? "Use 4-Digit Passcode" : "Use 6-Digit Passcode", for: .normal)
+        if !check {
+            otpStackView.layer.opacity = 1
+            enterPasswordLabel.text =  "Enter the 4 digits in the passcode."
+            otpStackView1.layer.opacity = 0
+        }else {
+            otpStackView.layer.opacity = 0
+            enterPasswordLabel.text =  "Enter the 6 digits in the passcode."
+            otpStackView1.layer.opacity = 1
+        }
     }
     
     func configureBackground() {
@@ -81,8 +102,9 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
     func didChangeValidity(isValid: Bool) {
         if isValid &&   setPasswordLabel.text == "Set a Passcode" {
             otpStackView.clearCoins()
+            otpStackView1.clearCoins()
             setPasswordLabel.text = "Confirm a Passcode"
-            enterPasswordLabel.text = "Re-enter the 4 digits in the passcode."
+            enterPasswordLabel.text = check ?  "Re-enter the 6 digits in the passcode." :  "Re-enter the 4 digits in the passcode."
         }else  if isValid &&   setPasswordLabel.text != "Set a Passcode"  {
             let vc =  MainTableViewController()
             vc.modalPresentationStyle = .fullScreen
@@ -98,6 +120,7 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
         view.addSubview(enterPasswordLabel)
         view.addSubview(skipForNowWalletButton)
         view.addSubview(otpStackView)
+        view.addSubview(otpStackView1)
         view.addSubview(setPasswordLabel)
         view.addSubview(setPassWordImageView)
      
@@ -120,6 +143,12 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
             otpStackView.heightAnchor.constraint(equalToConstant: 16),
             otpStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             ])
+        NSLayoutConstraint.activate([
+            otpStackView1.topAnchor.constraint(equalTo: enterPasswordLabel.bottomAnchor, constant: 30),
+            otpStackView1.heightAnchor.constraint(equalToConstant: 16),
+            otpStackView1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ])
+        
         
         NSLayoutConstraint.activate([
             skipForNowWalletButton.topAnchor.constraint(equalTo:    otpStackView.bottomAnchor, constant: 40),

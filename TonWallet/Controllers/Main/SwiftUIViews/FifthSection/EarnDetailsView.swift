@@ -12,7 +12,7 @@ struct EarnDetailsView: View {
     @Binding  var path: [StakeRoutes]
     var body: some View {
         ZStack{
-            Color.lightWhite.ignoresSafeArea()
+            Color.lightWhite.ignoresSafeArea(.all)
             VStack(spacing:20){
                 HStack{
                     Text("7 220.25")
@@ -138,6 +138,7 @@ struct EarnDetailsView: View {
                         
                         
                     }
+                 
                     .listStyle(.plain)
                 }
                 .frame(maxWidth:.infinity)

@@ -12,7 +12,8 @@ struct SendDisplayCoinView: View {
     var body: some View {
         VStack(spacing:20){
             Spacer()
-            Image("tonWalletCreateWalletImage")
+            GifImage("congratulations")
+                .frame(width: 124,height: 124)
             HStack{
                 Spacer()
                      Text("-246.8")

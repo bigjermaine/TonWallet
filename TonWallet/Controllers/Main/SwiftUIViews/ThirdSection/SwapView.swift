@@ -211,6 +211,7 @@ extension SwapView {
           
                 HStack{
                     Button{
+                        HapticManager.shared.vibrateForSelection()
                         path.append(.Buy)
                     }label: {
                         HStack{
@@ -320,7 +321,7 @@ struct AlertView: View {
                     shown.toggle()
                 }
                 .foregroundColor(.blue)
-                .padding(.top,5)
+               
              
          }.frame(width: 270, height: 253)
          
@@ -368,19 +369,19 @@ struct AlertView2: View {
              }
              .padding()
             Divider()
-             HStack{
+         
                  Button("OK") {
                      closureA = .cancel
                      shown.toggle()
                  }
                  .foregroundColor(.blue)
-                 .padding(.top,8)
-             }
-                .frame(width: 280)
+                
+               
+       
             
              
-         }.frame(width: 280, height: 380)
-         
+         }
+         .frame(width: 280, height: 380)
          .background(Color.white)
          .cornerRadius(12)
          .clipped()

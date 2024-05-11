@@ -20,7 +20,14 @@ protocol OTPDelegate: AnyObject {
 class OTPStackView: UIStackView {
     
     //Customise the OTPField here
-    let numberOfFields = 4
+    var numberOfFields:Int {
+        didSet{
+//            
+            setupStackView()
+            addOTPFields()
+        }
+    }
+     
     var textFieldsCollection: [OTPTextField] = []
     weak var delegate: OTPDelegate?
     var showsWarningColor = false
@@ -30,17 +37,19 @@ class OTPStackView: UIStackView {
     var remainingStrStack: [String] = []
     
     required init(coder: NSCoder) {
-        super.init(coder: coder)
-        setupStackView()
-        addOTPFields()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupStackView()
-        addOTPFields()
-    }
-    
+            self.numberOfFields = 4// Default value for number of fields
+            super.init(coder: coder)
+            setupStackView()
+            addOTPFields()
+        }
+        
+        init(numberOfFields: Int) {
+            self.numberOfFields = numberOfFields
+            super.init(frame: .zero)
+            setupStackView()
+            addOTPFields()
+        }
+        
     //Customisation and setting stackView
     private final func setupStackView() {
         self.backgroundColor = .clear
@@ -53,7 +62,10 @@ class OTPStackView: UIStackView {
     
     //Adding each OTPfield to stack view
     private final func addOTPFields() {
+     
+        textFieldsCollection.removeAll()
         for index in 0..<numberOfFields{
+            
             let field = OTPTextField()
             setupTextField(field)
             textFieldsCollection.append(field)

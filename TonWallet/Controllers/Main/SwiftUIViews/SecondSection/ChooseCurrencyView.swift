@@ -92,6 +92,7 @@ extension ChooseCurrencyView {
             
             Spacer()
             Button{
+                HapticManager.shared.vibrate(for: .success)
                 dismiss()
             }label: {
                 Image("CloseButton")

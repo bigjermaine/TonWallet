@@ -65,6 +65,18 @@ struct SendSpecificAmountTokenView: View {
                     Image("CloseButton")
                 }
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button{
+                    HapticManager.shared.vibrate(for: .success)
+                    path.removeLast()
+                }label: {
+                    HStack{
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .foregroundColor(.blue)
+                }
+            }
         }
         .onChange(of:text) { x in
             if x.isEmpty {
@@ -75,6 +87,7 @@ struct SendSpecificAmountTokenView: View {
             check1()
         }
         .padding()
+        .navigationBarBackButtonHidden(true)
       
     }
     func check1() {

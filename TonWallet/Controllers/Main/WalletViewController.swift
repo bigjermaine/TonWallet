@@ -433,16 +433,18 @@ extension WalletViewController {
         return section
     }
     func didTapAdd() {
-        
+        HapticManager.shared.vibrate(for: .success)
         self.present(self.createActionSheet(), animated: true, completion: nil)
     }
     
     func didTapSend() {
+        HapticManager.shared.vibrate(for: .success)
         let vc = UIHostingController(rootView:ChooseCurrencyView())
         present(vc, animated: true)
     }
     
     func didTapEarn() {
+        HapticManager.shared.vibrate(for: .success)
         let vc = UIHostingController(rootView:EarnView())
         present(vc, animated: true)
       
@@ -450,6 +452,7 @@ extension WalletViewController {
     }
     
     func didTapSwap() {
+        HapticManager.shared.vibrate(for: .success)
         let vc = UIHostingController(rootView:  SwapView())
         present(vc, animated: true)
       
@@ -469,12 +472,14 @@ extension WalletViewController {
             actionSheet.addAction(buyWithCardAction)
             
             let buyWithCryptoAction = UIAlertAction(title: "Buy with Crypto", style: .default) { _ in
+                HapticManager.shared.vibrate(for: .success)
                 let vc = UIHostingController(rootView:   QrSendView())
                 self.present(vc, animated: true)
             }
             actionSheet.addAction(buyWithCryptoAction)
             
             let receiveQRInvoiceAction = UIAlertAction(title: "Receive with QR or Invoice", style: .default) { _ in
+                HapticManager.shared.vibrate(for: .success)
                 let vc = UIHostingController(rootView:   CrossChainQrSwap())
                 self.present(vc, animated: true)
             }

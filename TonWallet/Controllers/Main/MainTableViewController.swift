@@ -64,7 +64,8 @@ class MainTableViewController: UITabBarController, UITabBarControllerDelegate {
         nav1.navigationBar.shadowImage = UIImage()
         setViewControllers([nav1,nav2,nav3,nav4], animated: false)
         
-        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissBlurView))
+//        view.addGestureRecognizer(tapGesture)
 
     
     }
