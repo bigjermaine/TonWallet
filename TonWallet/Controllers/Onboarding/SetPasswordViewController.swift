@@ -101,11 +101,13 @@ class SetPasswordViewController: UIViewController, OTPDelegate {
     
     func didChangeValidity(isValid: Bool) {
         if isValid &&   setPasswordLabel.text == "Set a Passcode" {
+            HapticManager.shared.vibrate(for: .success)
             otpStackView.clearCoins()
             otpStackView1.clearCoins()
             setPasswordLabel.text = "Confirm a Passcode"
             enterPasswordLabel.text = check ?  "Re-enter the 6 digits in the passcode." :  "Re-enter the 4 digits in the passcode."
         }else  if isValid &&   setPasswordLabel.text != "Set a Passcode"  {
+            HapticManager.shared.vibrate(for: .success)
             let vc =  MainTableViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle =  .coverVertical

@@ -58,7 +58,7 @@ class TransactionCustomButton:UIButton{
         addSubview(coinAmountLabel)
         configureLayout()
         let color = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
-        backgroundColor = color
+        backgroundColor = Toncolors.darkBlueColor
         layer.cornerRadius = 12
        clipsToBounds = false
     }

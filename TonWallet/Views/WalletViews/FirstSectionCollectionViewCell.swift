@@ -150,7 +150,7 @@ class FirstSectionCollectionViewCell: UICollectionViewCell {
             
             divder.leadingAnchor.constraint(equalTo: coinPriceLabel.leadingAnchor),
             divder.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0),
-            divder.heightAnchor.constraint(equalToConstant: 2),
+            divder.heightAnchor.constraint(equalToConstant: 1),
             divder.bottomAnchor.constraint(equalTo: bottomAnchor)
             
             

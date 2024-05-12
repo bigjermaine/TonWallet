@@ -98,9 +98,9 @@ class SeedPhaseViewController: UIViewController, UITableViewDelegate, UITableVie
     func configureConstraints() {
         NSLayoutConstraint.activate([
             seedPhasestableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            seedPhasestableView.leadingAnchor.constraint(equalTo:   view.leadingAnchor,constant: 20),
+            seedPhasestableView.leadingAnchor.constraint(equalTo:   view.leadingAnchor,constant: 24),
             seedPhasestableView.trailingAnchor.constraint(equalTo: view
-                .trailingAnchor,constant:-20),
+                .trailingAnchor,constant:-24),
             seedPhasestableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     
         ])
@@ -118,8 +118,8 @@ class SeedPhaseViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.layer.masksToBounds = true
         cell.layer.borderColor = Color.white.cgColor
-        cell.layer.borderWidth = 4
-        cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 10
+        cell.layer.cornerRadius = 16
         cell.clipsToBounds = true
         cell.secreteTextInput.tag = indexPath.row
         cell.selectionStyle = .none
@@ -129,7 +129,7 @@ class SeedPhaseViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 48
+       return 66
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

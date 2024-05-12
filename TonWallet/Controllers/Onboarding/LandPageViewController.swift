@@ -88,6 +88,7 @@ class LandPageViewController: UIViewController {
     }
     
   @objc func navigateToSeedPhaseController() {
+      HapticManager.shared.vibrateForSelection()
       let vc = UINavigationController(rootViewController: SeedPhaseViewController())
       vc.modalPresentationStyle = .fullScreen
       vc.modalTransitionStyle = .crossDissolve
@@ -95,6 +96,7 @@ class LandPageViewController: UIViewController {
     }
     
     @objc func navigateToWalletCreatedViewController() {
+        HapticManager.shared.vibrateForSelection()
           let vc =    UINavigationController(rootViewController:WalletCreatedViewController())
           vc.modalPresentationStyle = .fullScreen
           vc.modalTransitionStyle = .crossDissolve

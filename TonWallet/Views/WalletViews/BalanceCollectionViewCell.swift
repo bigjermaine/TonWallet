@@ -29,7 +29,7 @@ class BalanceCollectionViewCell: UICollectionViewCell {
       var mainWalletText:UILabel = {
         let label = UILabel()
         label.text = "Main Wallet"
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: 17)
         label.textColor = .white.withAlphaComponent(0.66)
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -80,5 +80,7 @@ class BalanceCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    
+    func configureCell(x:String) {
+        walletBalanceLabel.text = x
+    }
 }

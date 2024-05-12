@@ -13,11 +13,12 @@ class secretWordTableViewCell: UITableViewCell {
      
     private let countlabel: UILabel = {
         let label = UILabel()
-        label.textColor = Toncolors.grayColor
+        label.textColor = .gray
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 17,weight: .light)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "1"
+        
         return label
     }()
    

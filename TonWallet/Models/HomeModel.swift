@@ -80,3 +80,12 @@ let dummyData: [listSection] = [
          
     
 ]
+let dummyData1: [listSection] = [
+    .walletBalance([]),
+    .button([]),
+        
+    
+  
+         
+    
+]

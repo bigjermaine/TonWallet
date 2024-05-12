@@ -94,7 +94,7 @@ class SentNftCollectionViewCell: UICollectionViewCell {
     
     private let swappedLabel: UILabel = {
          let label = UILabel()
-         label.textColor = .black.withAlphaComponent(0.45)
+         label.textColor = .gray
          label.numberOfLines = 0
          label.textAlignment = .right
          label.font = .systemFont(ofSize: 13, weight: .regular)
@@ -173,7 +173,7 @@ class SentNftCollectionViewCell: UICollectionViewCell {
             
             divder.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
             divder.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0),
-            divder.heightAnchor.constraint(equalToConstant: 2),
+            divder.heightAnchor.constraint(equalToConstant: 1),
             divder.bottomAnchor.constraint(equalTo: bottomAnchor)
             
             

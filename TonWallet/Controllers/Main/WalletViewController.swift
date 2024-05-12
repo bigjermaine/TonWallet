@@ -9,11 +9,16 @@ import UIKit
 import SwiftUI
 
 class WalletViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ActionButtonsCollectionViewCellProtocol {
-   
+  
+    
+ 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemBlue
+        collectionView.backgroundColor = Toncolors.lightBlueColor
         return collectionView
     }()
     
@@ -22,7 +27,7 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
         return button
    }()
     
-    
+    var isScrollingDown = false
     lazy var adjustButtonRightButtonItem: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(named: "Union")?.withRenderingMode(.alwaysOriginal), style:.plain, target: self, action:#selector(inboxTapped))
         return button
@@ -30,7 +35,7 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     lazy var  walletBalanceLabel:UILabel = {
         let label = UILabel()
-        label.text = "$12 229.5"
+        label.text = "$546 027.5"
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .white
         label.numberOfLines = 1
@@ -50,29 +55,232 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
         return label
     }()
     
+    
     private lazy var stackView: UIStackView  = {
         let stackView = UIStackView(arrangedSubviews: [walletBalanceLabel,mainWalletText])
         stackView.axis = .vertical
         return stackView
     }()
+    private let stackView1: UIView  = {
+        let stackView = UIView()
+        stackView.backgroundColor = .white
+        stackView.layer.maskedCorners =    [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        stackView.layer.cornerRadius = 12
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    
+    private let  walletEmptyImageView : UIImageView  = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "")
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private let walletEmptyLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font =  .systemFont(ofSize: 17, weight: .bold)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "You have no\n transactions yet."
+        return label
+    }()
+    
+    let addButton = TransactionCustomButton()
+    let sendButton = TransactionCustomButton()
+    let earnButton = TransactionCustomButton()
+    let swapButton = TransactionCustomButton()
     
     
     var editorialSectionType:[listSection] = dummyData
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         centerTitle()
-       
         configureCollectionView()
         configureConstraints()
         configureDelegateAndDataSource()
         setupNavBar()
+      
+        sendButton.addTarget(self, action: #selector(didTapSend1), for: .touchUpInside)
+        swapButton.addTarget(self, action: #selector(didTapSwap1), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(didTapBuy1), for: .touchUpInside)
+        earnButton.addTarget(self, action: #selector(didTapEarn1), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEditorialSectionTypeChange), name: Notification.Name("EditorialSectionTypeDidChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEditorialSectionTypeChange1), name: Notification.Name("EditorialSectionTypeDidChange1"), object: nil)
     }
+    
+   
+    @objc func handleEditorialSectionTypeChange() {
+        // Change the variable here
+        editorialSectionType = dummyData
+        
+        HapticManager.shared.vibrateForSelection()
+        if editorialSectionType.count > 2 {
+            
+            walletBalanceLabel.text = "$546 027.5"
+            homeCollectionView.layer.opacity = 1
+           // homeCollectionView.reloadData()
+        }else {
+            walletBalanceLabel.text = "$0"
+            homeCollectionView.layer.opacity = 0
+        }
+        configureStack()
+    }
+
+    @objc func handleEditorialSectionTypeChange1() {
+        // Change the variable here
+        editorialSectionType = dummyData1
+        HapticManager.shared.vibrateForSelection()
+        if editorialSectionType.count > 2 {
+            walletBalanceLabel.text = "$546 027.5"
+            homeCollectionView.layer.opacity = 1
+           // homeCollectionView.reloadData()
+        }else {
+            walletBalanceLabel.text = "$0"
+            homeCollectionView.layer.opacity = 0
+        }
+        configureStack()
+    }
+
+  
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
+        if editorialSectionType.count > 2 {
+            walletBalanceLabel.text = "$546 027.5"
+            homeCollectionView.layer.opacity = 1
+        }else {
+            walletBalanceLabel.text = "$0"
+            homeCollectionView.layer.opacity = 0
+        }
+       configureStack()
+
     }
+  
+    
+    func configureStack() {
+        if editorialSectionType.count < 3 {
+            let stackView1 = UIStackView(arrangedSubviews: [walletBalanceLabel,mainWalletText])
+            walletBalanceLabel.font = .systemFont(ofSize: 34)
+            mainWalletText.font = .systemFont(ofSize: 17)
+            stackView1.axis = .vertical
+            stackView1.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(stackView1)
+            view.backgroundColor = Toncolors.lightBlueColor
+            
+            
+            NSLayoutConstraint.activate([
+                stackView1.topAnchor.constraint(equalTo:  view.topAnchor,constant: 100),
+                stackView1.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
+                stackView1.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
+                
+                
+            ])
+            let stackView = UIStackView(arrangedSubviews: [addButton, sendButton, earnButton, swapButton])
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.spacing = 10
+            view.addSubview(stackView)
+            
+            NSLayoutConstraint.activate([
+                stackView.topAnchor.constraint(equalTo:  stackView1.bottomAnchor,constant: 40),
+                stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
+                stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
+                stackView.heightAnchor.constraint(equalToConstant: 60),
+                
+            ])
+            
+            let stackView3 = UIView()
+            stackView3.backgroundColor = .white
+            stackView3.translatesAutoresizingMaskIntoConstraints = false
+            stackView3.layer.maskedCorners =    [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            stackView3.layer.cornerRadius = 16
+            view.addSubview(stackView3)
+            NSLayoutConstraint.activate([
+                stackView3.topAnchor.constraint(equalTo:  stackView.bottomAnchor,constant: 20),
+                stackView3.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 0),
+                stackView3.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: 0),
+                stackView3.bottomAnchor.constraint(equalTo:view.bottomAnchor),
+                
+            ])
+            
+            
+            view.addSubview(walletEmptyImageView)
+            NSLayoutConstraint.activate([
+                walletEmptyImageView.centerXAnchor.constraint(equalTo: stackView3.centerXAnchor, constant: 0),
+                walletEmptyImageView.centerYAnchor.constraint(equalTo: stackView3.centerYAnchor,constant: -100),
+                walletEmptyImageView.widthAnchor.constraint(equalToConstant:124),
+                walletEmptyImageView.heightAnchor.constraint(equalToConstant: 124)
+                
+            ])
+            
+            
+            walletEmptyImageView.image = UIImage.gifImageWithName("created")
+            
+            view.addSubview(walletEmptyLabel)
+            
+            NSLayoutConstraint.activate([
+                walletEmptyLabel.centerXAnchor.constraint(equalTo: stackView3.centerXAnchor, constant: 0),
+                walletEmptyLabel.topAnchor.constraint(equalTo: walletEmptyImageView.bottomAnchor,constant: 10),
+                walletEmptyLabel.widthAnchor.constraint(equalToConstant:180),
+                
+                
+            ])
+            
+            
+            if editorialSectionType.count > 2 {
+                stackView.layer.opacity = 0
+                stackView3.layer.opacity = 0
+                stackView1.layer.opacity = 0
+                walletEmptyImageView.layer.opacity = 0
+                walletEmptyLabel.layer.opacity = 0
+            }else {
+                stackView.layer.opacity = 1
+                stackView1.layer.opacity = 1
+                stackView3.layer.opacity = 1
+                walletEmptyImageView.layer.opacity = 1
+                walletEmptyLabel.layer.opacity = 1
+            }
+            
+            
+            
+            configureButton()
+        }
+        
+        
+    }
+
+
+
+func configureButton() {
+  
+    earnButton.coinImage = UIImage(named: "earnIcon")
+    earnButton.coinAmountText = "earn"
+    
+    
+    swapButton.coinImage = UIImage(named: "swapIcon")
+    swapButton.coinAmountText = "swap"
+
+    
+    sendButton.coinImage = UIImage(named: "sendIcon")
+    sendButton.coinAmountText = "send"
+
+    
+    
+    addButton.coinImage = UIImage(named: "addIcon")
+    addButton.coinAmountText = "add"
+
+}
+
     @objc func inboxTapped() {
         let vc = UIHostingController(rootView:ScannerView2())
         present(vc, animated: true)
@@ -105,6 +313,7 @@ class WalletViewController: UIViewController, UICollectionViewDataSource, UIColl
             homeCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             homeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             homeCollectionView.bottomAnchor.constraint(equalTo:view.bottomAnchor),
+            
         ])
         
     }
@@ -183,8 +392,8 @@ extension WalletViewController {
             }else if viewModel[indexPath.row].sentNFTImage != "" {
                 let vc = UIHostingController(rootView:RecivedNfT())
                 present(vc, animated: true)
-            } else if viewModel[indexPath.row].sentNFTImage != ""{
-                    let vc = UIHostingController(rootView:RecivedNfT())
+            } else{
+                    let vc = UIHostingController(rootView:RecivedNfT2())
                     present(vc, animated: true)
             }
         case .button(_):
@@ -204,7 +413,7 @@ extension WalletViewController {
             }
             
             
-            let color = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            let color = Toncolors.darkBlueColor
             cell.backgroundColor = color
             cell.clipsToBounds = true
             let isFirstItem = indexPath.item == 0
@@ -278,58 +487,55 @@ extension WalletViewController {
             guard  let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:BalanceCollectionViewCell.identifier, for: indexPath) as? BalanceCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            if editorialSectionType.count > 2 {
+                cell.configureCell(x: "$546 027.5")
+            }else{
+                cell.configureCell(x: "$O")
+            }
             return cell
         }
        
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let indexPath = IndexPath(item: 0, section: 0)
-//        guard let cell = self.homeCollectionView.cellForItem(at: indexPath) as? BalanceCollectionViewCell else {
-//               return
-//           }
-//        
-//        let safeAreaTop = UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0
-//        
-//        let magicalSafeAreaTop:CGFloat = safeAreaTop + (navigationController?.navigationBar.frame.height ?? 0)
-//        
-//        let offset = scrollView.contentOffset.y + magicalSafeAreaTop
-//        
-//        
-//        let alpha:CGFloat =  1 - (scrollView.contentOffset.y + magicalSafeAreaTop)/magicalSafeAreaTop
-//        print(alpha)
-//        if alpha <= 0.94  {
-//            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
-//                DispatchQueue.main.async {
-//                    self.stackView.isHidden = false
-//                    cell.stackView.alpha = 0.00
-//                    self.stackView.alpha = 1.0
-//                  
-//                }
-//               }, completion: nil)
-//           }else if alpha ==  0.9482200647249192 {
-//               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-//             
-//                   DispatchQueue.main.async {
-//                       self.stackView.isHidden = false
-//                       self.stackView.alpha = 0.0
-//                       cell.stackView.alpha = 1.00
-//                   }
-//                  
-//                  }, completion: nil)
-//               
-//           }else {
-//               UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
-//                   DispatchQueue.main.async {
-//                       self.stackView.isHidden = false
-//                       cell.stackView.alpha = 0.00
-//                       self.stackView.alpha = 1.0
-//                      
-//                   }
-//                  }, completion: nil)
-//           }
-//           
-//    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let indexPath = IndexPath(item: 0, section: 0)
+        guard let cell = self.homeCollectionView.cellForItem(at: indexPath) as? BalanceCollectionViewCell else {
+            return
+        }
+        
+        let safeAreaTop = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.top ?? 0
+        let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 0
+        let magicalSafeAreaTop = safeAreaTop + navigationBarHeight
+        
+        let offset = scrollView.contentOffset.y + magicalSafeAreaTop
+        let newAlpha: CGFloat = 1 - offset / magicalSafeAreaTop
+        
+        if offset > 0 && offset < magicalSafeAreaTop {
+            // Scrolling up
+            if !isScrollingDown {
+                UIView.animate(withDuration: 0.3) {
+                    DispatchQueue.main.async{[weak self ] in
+                        cell.walletBalanceLabel.transform = CGAffineTransform(scaleX: newAlpha, y: newAlpha)
+                        cell.mainWalletText.transform = CGAffineTransform(scaleX: newAlpha, y: newAlpha)
+                        print(newAlpha)
+                        if  newAlpha < 0.3559870550161811 {
+                            
+                            self?.stackView.isHidden = false
+                            self?.walletBalanceLabel.transform = CGAffineTransform(scaleX: 1 - newAlpha - 0.1, y: 1 - newAlpha)
+                            self?.mainWalletText.transform = CGAffineTransform(scaleX: 1 - newAlpha - 0.1, y: 1 - newAlpha)
+                        }else {
+                            self?                                                                                                                                                                                                                            .stackView.isHidden = true
+                        }
+                        
+                        
+                    }
+                }
+            }
+            }
+            }
+        
+        
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] section, layoutEnvironment in
             switch self?.editorialSectionType[section] {
@@ -394,9 +600,9 @@ extension WalletViewController {
     }
 
     private func firstCollectionViewLayout() -> NSCollectionLayoutSection  {
-        let item2 = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80)))
+        let item2 = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60)))
         item2.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-        let group = NSCollectionLayoutGroup.vertical(layoutSize:  NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:.absolute(80)),subitem:item2,count: 1)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize:  NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:.absolute(60)),subitem:item2,count: 1)
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
@@ -422,7 +628,7 @@ extension WalletViewController {
     private func secondCollectionViewLayout() -> NSCollectionLayoutSection  {
         let item2 = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60)))
         item2.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        let group = NSCollectionLayoutGroup.vertical(layoutSize:  NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:.absolute(88)),subitem:item2,count: 1)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize:  NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:.absolute(60)),subitem:item2,count: 1)
         let section = NSCollectionLayoutSection(group: group)
         
         section.boundarySupplementaryItems = [
@@ -434,7 +640,7 @@ extension WalletViewController {
     }
     func didTapAdd() {
         HapticManager.shared.vibrate(for: .success)
-        self.present(self.createActionSheet(), animated: true, completion: nil)
+        present(self.createActionSheet(), animated: true, completion: nil)
     }
     
     func didTapSend() {
@@ -458,6 +664,52 @@ extension WalletViewController {
       
     }
     
+     @objc func didTapEarn1() {
+         
+         UIView.animate(withDuration: 0.2) {[weak self] in
+             self?.earnButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+             HapticManager.shared.vibrate(for: .success)
+             let vc = UIHostingController(rootView:EarnView())
+             self?.present(vc, animated: true)
+         }completion: {[weak self]  _ in
+             self?.earnButton.backgroundColor = Toncolors.darkBlueColor
+         }
+     }
+     @objc func didTapBuy1() {
+         
+         UIView.animate(withDuration: 0.2) {[weak self] in
+             self?.addButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+             HapticManager.shared.vibrate(for: .success)
+             self?.present(self!.createActionSheet(), animated: true, completion: nil)
+         }completion: { [weak self] _  in
+             self?.addButton.backgroundColor = Toncolors.darkBlueColor
+         }
+     }
+     @objc func didTapSwap1() {
+         
+         UIView.animate(withDuration: 0.2) {[weak self] in
+             self?.swapButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+             HapticManager.shared.vibrate(for: .success)
+             let vc = UIHostingController(rootView:  SwapView())
+             self?.present(vc, animated: true)
+           
+             
+         }completion: { [weak self]  _ in
+             self?.swapButton.backgroundColor = Toncolors.darkBlueColor
+         }
+     }
+     
+     @objc func didTapSend1() {
+         
+         UIView.animate(withDuration: 0.2) {[weak self] in
+             self?.sendButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+             HapticManager.shared.vibrate(for: .success)
+             let vc = UIHostingController(rootView:ChooseCurrencyView())
+             self?.present(vc, animated: true)
+         }completion: { [weak self]  _ in
+             self?.sendButton.backgroundColor =  Toncolors.darkBlueColor
+         }
+     }
     
     private func createActionSheet()  -> UIAlertController {
             let actionSheet = UIAlertController(title: nil, message:nil, preferredStyle: .actionSheet)

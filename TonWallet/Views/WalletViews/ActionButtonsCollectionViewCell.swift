@@ -45,7 +45,7 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.2) {
             self.earnButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         }completion: { _ in
-            self.earnButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            self.earnButton.backgroundColor = Toncolors.darkBlueColor
         }
     }
     @objc func didTapBuy() {
@@ -53,7 +53,7 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.2) {
             self.addButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         }completion: { _ in
-            self.addButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            self.addButton.backgroundColor = Toncolors.darkBlueColor
         }
     }
     @objc func didTapSwap() {
@@ -61,7 +61,7 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.2) {
             self.swapButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         }completion: { _ in
-            self.swapButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            self.swapButton.backgroundColor = Toncolors.darkBlueColor
         }
     }
     
@@ -70,7 +70,7 @@ class ActionButtonsCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.2) {
             self.sendButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         }completion: { _ in
-            self.sendButton.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+            self.sendButton.backgroundColor =  Toncolors.darkBlueColor
         }
     }
     required init?(coder: NSCoder) {

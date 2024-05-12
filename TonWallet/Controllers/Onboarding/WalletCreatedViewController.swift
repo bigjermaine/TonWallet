@@ -87,6 +87,7 @@ class WalletCreatedViewController: UIViewController {
         skipForNowWalletButton.addTarget(self, action: #selector(didChangeValidity), for: .touchUpInside)
     }
     @objc func didChangeValidity() {
+        HapticManager.shared.vibrate(for: .success)
             let vc =  MainTableViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle =  .coverVertical
@@ -94,6 +95,7 @@ class WalletCreatedViewController: UIViewController {
           
     }
   @objc func navigateToSetPasswordViewController() {
+       HapticManager.shared.vibrate(for: .success)
         let vc = SetPasswordViewController()
         let navVC = vc
       self.navigationController?.pushViewController(navVC, animated: true)

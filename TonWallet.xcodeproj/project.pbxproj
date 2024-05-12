@@ -89,6 +89,8 @@
 		D0917AB12BEF2E4D00F4FE30 /* congratulations.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */; };
 		D0917AB32BEF2F0000F4FE30 /* password.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB22BEF2F0000F4FE30 /* password.gif */; };
 		D0917AB52BEF71E400F4FE30 /* checking.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB42BEF71E400F4FE30 /* checking.gif */; };
+		D0917AB72BF08DBF00F4FE30 /* NoTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0917AB62BF08DBF00F4FE30 /* NoTransactionViewController.swift */; };
+		D0917AB92BF09B4700F4FE30 /* created.gif in Resources */ = {isa = PBXBuildFile; fileRef = D0917AB82BF09B4700F4FE30 /* created.gif */; };
 		D0CBC9B52BEC6CCF00DC7815 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */; };
 		D0E2D7912BE620C700A4AD60 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7902BE620C700A4AD60 /* SearchModel.swift */; };
 		D0E2D7932BE6474900A4AD60 /* RecipientAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */; };
@@ -182,6 +184,8 @@
 		D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = congratulations.gif; sourceTree = "<group>"; };
 		D0917AB22BEF2F0000F4FE30 /* password.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = password.gif; sourceTree = "<group>"; };
 		D0917AB42BEF71E400F4FE30 /* checking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = checking.gif; sourceTree = "<group>"; };
+		D0917AB62BF08DBF00F4FE30 /* NoTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTransactionViewController.swift; sourceTree = "<group>"; };
+		D0917AB82BF09B4700F4FE30 /* created.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = created.gif; sourceTree = "<group>"; };
 		D0CBC9B42BEC6CCF00DC7815 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D0E2D7902BE620C700A4AD60 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		D0E2D7922BE6474900A4AD60 /* RecipientAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientAddressView.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 			children = (
 				D0168F4B2BAEF34600F330F8 /* MainTableViewController.swift */,
 				D0168F4D2BAEF56D00F330F8 /* WalletViewController.swift */,
+				D0917AB62BF08DBF00F4FE30 /* NoTransactionViewController.swift */,
 				D0168F4F2BAEF57D00F330F8 /* AssetsViewController.swift */,
 				D0168F512BAEF58A00F330F8 /* BrowseViewController.swift */,
 				D0168F532BAEF5D500F330F8 /* SettingsViewController.swift */,
@@ -489,6 +494,7 @@
 		D0917AA72BEF1F9600F4FE30 /* GifFiles */ = {
 			isa = PBXGroup;
 			children = (
+				D0917AB82BF09B4700F4FE30 /* created.gif */,
 				D0917AB02BEF2E4D00F4FE30 /* congratulations.gif */,
 				D0917AB42BEF71E400F4FE30 /* checking.gif */,
 				D0917AB22BEF2F0000F4FE30 /* password.gif */,
@@ -571,6 +577,7 @@
 				D0917AB32BEF2F0000F4FE30 /* password.gif in Resources */,
 				D09179FB2BEF139700F4FE30 /* Too Bad.tgs in Resources */,
 				D0917AB12BEF2E4D00F4FE30 /* congratulations.gif in Resources */,
+				D0917AB92BF09B4700F4FE30 /* created.gif in Resources */,
 				D0168EFB2BACD08300F330F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +639,7 @@
 				D0168F6F2BB3F90A00F330F8 /* CustomFooterView.swift in Sources */,
 				D038BAB62BE9863100D9001C /* YouSellSwapView.swift in Sources */,
 				D0E2D7992BE6788700A4AD60 /* SendTonPasswordView.swift in Sources */,
+				D0917AB72BF08DBF00F4FE30 /* NoTransactionViewController.swift in Sources */,
 				D0168F632BB2C63400F330F8 /* BalanceCollectionViewCell.swift in Sources */,
 				D0168F352BAE0BAE00F330F8 /* SecretWordTableViewCell.swift in Sources */,
 				D038BAA12BE8A4DD00D9001C /* QrScannerView.swift in Sources */,

@@ -34,7 +34,7 @@ class SecondSectionCollectionViewCell: UICollectionViewCell {
     
     private let sentLabel: UILabel = {
          let label = UILabel()
-         label.textColor = .black.withAlphaComponent(0.45)
+         label.textColor = .gray
          label.numberOfLines = 0
          label.textAlignment = .right
         label.font = .systemFont(ofSize: 13, weight: .regular)
@@ -56,7 +56,7 @@ class SecondSectionCollectionViewCell: UICollectionViewCell {
     
     private let coinAmountIncreaseLabel: UILabel = {
          let label = UILabel()
-         label.textColor = .black.withAlphaComponent(0.7)
+         label.textColor = .gray
          label.font = .systemFont(ofSize: 13, weight: .regular)
          label.numberOfLines = 0
          label.textAlignment = .right
@@ -137,7 +137,7 @@ class SecondSectionCollectionViewCell: UICollectionViewCell {
             
             divder.leadingAnchor.constraint(equalTo: walletLabel.leadingAnchor),
             divder.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 0),
-            divder.heightAnchor.constraint(equalToConstant: 2),
+            divder.heightAnchor.constraint(equalToConstant: 0.8),
             divder.bottomAnchor.constraint(equalTo: bottomAnchor)
             
             

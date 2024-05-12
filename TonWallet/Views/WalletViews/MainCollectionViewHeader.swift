@@ -47,7 +47,7 @@ class TitleHeaderCollectionView:UICollectionReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         stackView.frame = CGRect(x: 0, y: 20, width: frame.size.width, height: 40)
-        label.frame = CGRect(x: 10, y: 20, width:100, height: 40)
+        label.frame = CGRect(x: 10, y: 10, width:100, height: 40)
         
     }
     
